@@ -1,8 +1,16 @@
 import React from "react";
 
+import FrontPage from "./front_page/front_page";
+import { 
+  Route,
+  Switch,
+  Link 
+} from "react-router-dom";
+import LoginForm from "./login_form/login_form";
+
 const App = () => (
   <div>
-    <h1>component rendering!</h1>
+    <LoginForm />
   </div>
 )
 
