@@ -1,5 +1,9 @@
 import React from 'react';
 
+export const LoginButton = () => {
+  return <button>Login</button>
+}
+
 class LoginForm extends React.Component {
   constructor(props){
     super(props);

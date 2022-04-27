@@ -6,11 +6,12 @@ import {
   Switch,
   Link 
 } from "react-router-dom";
-import LoginForm from "./login_form/login_form";
+// import LoginForm from "./login_form/login_form";
 
 const App = () => (
   <div>
-    <LoginForm />
+    <FrontPage />
+    {/* <LoginForm /> */}
   </div>
 )
 

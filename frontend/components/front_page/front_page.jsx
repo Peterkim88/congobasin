@@ -1,14 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Route, Link, BrowserRouter } from "react-router-dom";
+import LoginForm, { LoginButton } from '../login_form/login_form';
 
 class FrontPage extends React.Component {
   
   render(){
     return(
-      <nav>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Sign Up</Link>
-      </nav>
+      <div>
+        <h2>Front Page</h2>
+        <BrowserRouter>
+          <div className="login-button">
+            <button>Login
+              <Link to="/login" component={LoginForm}/>
+            </button>
+          </div>
+          <div className="signup-button">
+            <button>Sign Up
+              {/* <Link to='/signup' component={SignupForm} /> */}
+            </button>
+          </div>
+        </BrowserRouter>
+      </div>
     )
   }
 }
