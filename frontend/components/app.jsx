@@ -9,7 +9,7 @@ import { AuthRoute } from "../util/route_util";
 
 const App = () => (
   <div>
-    <header>
+    <header id='top-header'>
       <Link to="/" className="header-link">
         <h1>Congo Basin</h1>
       </Link>
