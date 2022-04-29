@@ -10,6 +10,7 @@ import { AuthRoute } from "../util/route_util";
 const App = () => (
   <div>
     <header id='top-header'>
+    <img src={window.amazonlogoURL} alt="logo" />
       <Link to="/" className="header-link">
         <h1>Congo Basin</h1>
       </Link>
