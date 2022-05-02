@@ -1,0 +1,32 @@
+.login-form-container {
+  font-size: 18;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-label {
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px 6px;
+  text-align: left;
+  width: auto;
+  vertical-align: top;
+}
+
+.login-input {
+  font-size: inherit;
+}
+
+.session-submit {
+	background-color: rgb(225, 180, 122);
+}
+
+.login-form-heading {
+  font-weight: 900;
+  font-size: xx-large;
+}
+.login-form-sub-heading {
+  font-weight: 600;
+  font-size: larger;
+}
