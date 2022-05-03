@@ -34,12 +34,14 @@ class Product extends React.Component {
     // debugger
     // return <div>hello</div>
     const products = Object.values(this.props.allProducts).map((product) => {
-      return (<li key={product.id}>
-        {product.product_name},
-        {product.product_description},
-        {product.product_price},
-        {product.product_category}
-      </li>)
+      if (product.product_quantity !== 0){
+        return (<li key={product.id}>
+          {product.product_name},
+          {product.product_description},
+          {product.product_price},
+          {product.product_category}
+        </li>)
+      }
     })
     // const {products} = this.state;
     return(

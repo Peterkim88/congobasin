@@ -3,4 +3,5 @@ json.extract! product,
   :product_name,
   :product_description,
   :product_price,
-  :product_category
+  :product_category,
+  :product_quantity
