@@ -34,7 +34,7 @@ class Product extends React.Component {
     // debugger
     // return <div>hello</div>
     const products = Object.values(this.props.allProducts).map((product) => {
-      return (<li>
+      return (<li key={product.id}>
         {product.product_name},
         {product.product_description},
         {product.product_price},
@@ -44,7 +44,9 @@ class Product extends React.Component {
     // const {products} = this.state;
     return(
       <div>
-        {products}
+        <ul>
+          {products}
+        </ul>
       </div>
     )
   }

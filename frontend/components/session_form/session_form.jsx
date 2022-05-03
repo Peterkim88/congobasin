@@ -11,8 +11,8 @@ class SessionForm extends React.Component {
     // this.userLoginForm = this.userLoginForm.bind(this);
     // this.userSignupForm = this.userSignupForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    // this.update = this.update.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(field){
@@ -134,7 +134,7 @@ class SessionForm extends React.Component {
                 <br />
               </label>
               <br />
-              <input className="session-submit" type="button" value={this.props.formType} />
+              <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
         </div>
