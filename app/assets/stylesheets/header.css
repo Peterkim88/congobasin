@@ -55,29 +55,38 @@ button {
 }
 
 .logo-link {
+	max-height: 5ex;
+	max-width: 20ex;
+	min-width: 20ex;
+	min-height: 5ex;
 	align-items: center;
-	flex: 3;
+	justify-content: space-around;
+	flex: 4;
 }
 
 .header-logo {
-	max-height: 65%;
-	max-width: 65%;
-	margin: 20px;
-	align-items: center;
-	justify-content: space-around;
-	flex: 3
+	display: block;
+	max-height: 20ex;
+	max-width: 16ex;
+	margin-left: auto;
+	margin-right: auto;
+	width: 16ex;
+	/* margin: 20ex; */
 }
 
 .search-bar-box {
-	max-height: auto;
+	max-height: 20ex;
 	max-width: auto;
-	flex: 24;
+	flex: 20;
+	align-items: center;
 }
 
 .search-input {
+	margin-left: 5ex;
 	font: 18;
-	min-width: 90%;
+	min-width: 85%;
 	min-height: 75%;
+	flex: 19;
 }
 
 .login-box {
