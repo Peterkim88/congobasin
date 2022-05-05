@@ -5,13 +5,14 @@ import configureStore from './store/store';
 //testing start
 import { showOneProduct, showAllProducts } from './actions/product_actions';
 //testing end
+// import {showOneProduct} from './util/product_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store = configureStore();
   const root = document.getElementById('root');
   // testing start
   window.store = store;
-  window.showAllProducts = showAllProducts
+  // window.showAllProducts = showAllProducts
   window.showOneProduct = showOneProduct
   // testing end
   ReactDOM.render(<Root store={store} />, root);

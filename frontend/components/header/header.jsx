@@ -6,7 +6,7 @@ import SearchBar from './search/search';
 const NavHeader = () => (
   <header className='top-header'>
     <Link to="/" className="logo-link">
-      <img className='header-logo' src={window.amazonlogoURL} alt="logo" />
+      <img className='header-logo' src={window.headerlogoURL} alt="logo" />
     </Link>
     <SearchBar />
     <GreetingContainer className='login-box' />

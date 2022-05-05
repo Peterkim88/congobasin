@@ -18,7 +18,7 @@ export const showAllProducts = products => dispatch => (
     .then(products => (dispatch(showProducts(products))))
 );
 
-export const showOneProduct = productId => dispatch => (
-  APIUtil.showOneProduct(productId)
+export const showOneProduct = productId => dispatch => {
+  return APIUtil.showOneProduct(productId)
     .then(product => (dispatch(showProduct(product))))
-);
+};

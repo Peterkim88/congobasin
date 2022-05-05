@@ -6,7 +6,8 @@ const productsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type){
     case SHOW_PRODUCT:
-      return Object.assign({}, state, {[action.product.id]: action.product});
+      const selectedProduct = {[action.product.id]: action.product}
+      return Object.assign({}, state, selectedProduct);
     case SHOW_PRODUCTS:
       return action.products;
     default:

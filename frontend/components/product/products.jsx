@@ -1,14 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-class Product extends React.Component {
+class Products extends React.Component {
   constructor(props){
     super(props)
-    this.state = {
-      product_name: '',
-      product_description: '',
-      product_price: '',
-      product_category: ''
-    };
+    this.state = {};
     this.renderErrors = this.renderErrors.bind(this);
   };
 
@@ -31,19 +27,20 @@ class Product extends React.Component {
   }
   
   render(){
-    // debugger
-    // return <div>hello</div>
     const products = Object.values(this.props.allProducts).map((product) => {
       if (product.product_quantity !== 0){
-        return (<li key={product.id}>
-          {product.product_name},
-          {product.product_description},
-          {product.product_price},
-          {product.product_category}
-        </li>)
-      }
-    })
-    // const {products} = this.state;
+        return (
+          <div key={`products-${product.id}`}>
+            <Link to={`/products/${product.id}`}>
+              <img className='products-image' src={window.noImageURL} alt='product-img' />
+              {product.product_name}
+            </Link>
+              {/* {product.product_description}, */}
+              {product.product_price}
+              {/* {product.product_category} */}
+          </div>
+      )}}
+    );
     return(
       <div>
         <ul>
@@ -54,4 +51,4 @@ class Product extends React.Component {
   }
 }
 
-export default Product;
+export default Products;
