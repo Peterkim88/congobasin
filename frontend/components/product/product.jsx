@@ -31,12 +31,26 @@ class Product extends React.Component {
       return null;
     }
     return(
-      <div>
-        <div key={`product-${product.id}`}>
-          {product.product_name},
-          {product.product_description},
-          {product.product_price},
-          {product.product_category}
+      <div className='product-div'>
+        <div className='product-image-box'>
+          <img className='product-image' src={window.noImageURL} alt='product-img' />
+        </div>
+        <div key={`product-${product.id}`} className='product-info'>
+          <div className='product-name'>
+            {product.product_name},
+          </div>
+          <div className='product-description'>
+            Description:
+            <br />
+            {product.product_description},
+          </div>
+          <div className='product-price'>
+            {product.product_price},
+          </div>
+          <div className='product-category'>
+            {product.product_category}
+          </div>
+          review button goes here
         </div>
       </div>
     )

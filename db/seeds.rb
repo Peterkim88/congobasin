@@ -38,7 +38,8 @@ Product.create({
   product_description:
   'Breakthrough formula. 
   Whitening toothpaste that removes and prevents new stains. 
-  Fights bacteria on teeth, tongue, cheeks and gums for whole mouth healthy.
+  Fights bacteria on teeth, tongue, cheeks and gums for 
+  whole mouth healthy.
   Mint toothpaste for long lasting fresh breath.
   Helps prevent plaque, tartar, cavities and gingivitis.',
   product_price:
@@ -47,4 +48,67 @@ Product.create({
   'Health & Personal Care',
   product_quantity:
   300
+})
+Product.create({
+  product_name:
+  'Pantene, Shampoo and Conditioner 2 in 1, Pro-V Classic 
+  Clean, 25.4 Fl Oz, Pack of 2',
+  product_description:
+  'You will receive (2) 25.4 fl ounces bottles of 2 in 1 
+  Shampoo and Conditioner Classic Clean 2 In 1 Shampoo & 
+  Conditioner delivers gentle cleansing & conditioning 
+  perfect for daily use & any hair type. Strengthens hair 
+  against damage. Makes hair shiny, manageable, and healthy 
+  looking. Nourishing formula with antioxidants ; Instant 
+  strength,moisture, & shine - SILICONE-FREE',
+  product_price:
+  '$16.99',
+  product_category:
+  'Health & Personal Care',
+  product_quantity:
+  300
+})
+Product.create({
+  product_name:
+  '4 Pack Plush Velour 100% Cotton Beach Towels. Cabana Stripe 
+  Pool Towels for Adults. (Charcoal Grey, 4 Pack- 30" x 60")',
+  product_description:
+  "OVERSIZED BEACH AND POOL TOWELS: Made of 100% cotton for 
+  supreme comfort and luxury. SOFT, ABSORBENT AND DURABLE: 
+  Heavyweight, plush cotton provides ultimate softness, 
+  absorbency and durability. CHOOSE FROM 8 BEAUTIFUL STRIPE 
+  COLORS: Green, Charcoal Grey, Air Blue, Navy, Teal, Orange, 
+  Red, or Pink. EASY CARE: Machine washable and long-lasting.
+  100% SATISFACTION GUARANTEED: Customer satisfaction is of 
+  utmost importance to us. We're confident you'll love our 
+  products, but if you're not 100% SATISFIED, our customer 
+  service team will work with you to make it right!",
+  product_price:
+  '$56.99',
+  product_category:
+  'Health & Personal Care',
+  product_quantity:
+  200
+})
+Product.create({
+  product_name:
+  '4 Pack Plush Velour 100% Cotton Beach Towels. Cabana Stripe 
+  Pool Towels for Adults. (Charcoal Grey, 4 Pack- 30" x 60")',
+  product_description:
+  "OVERSIZED BEACH AND POOL TOWELS: Made of 100% cotton for 
+  supreme comfort and luxury. SOFT, ABSORBENT AND DURABLE: 
+  Heavyweight, plush cotton provides ultimate softness, 
+  absorbency and durability. CHOOSE FROM 8 BEAUTIFUL STRIPE 
+  COLORS: Green, Charcoal Grey, Air Blue, Navy, Teal, Orange, 
+  Red, or Pink. EASY CARE: Machine washable and long-lasting.
+  100% SATISFACTION GUARANTEED: Customer satisfaction is of 
+  utmost importance to us. We're confident you'll love our 
+  products, but if you're not 100% SATISFIED, our customer 
+  service team will work with you to make it right!",
+  product_price:
+  '$56.99',
+  product_category:
+  'Health & Personal Care',
+  product_quantity:
+  200
 })
