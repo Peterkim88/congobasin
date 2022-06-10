@@ -1,4 +1,6 @@
 import React from 'react';
+import Reviews from '../review/reviews';
+import ReviewsContainer from '../review/reviews_container';
 
 class Product extends React.Component {
   constructor(props){
@@ -50,7 +52,7 @@ class Product extends React.Component {
           <div className='product-category'>
             {product.product_category}
           </div>
-          review button goes here
+          <Reviews/>
         </div>
       </div>
     )
