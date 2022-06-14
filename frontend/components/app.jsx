@@ -7,6 +7,7 @@ import ProductsContainer from './product/products_container';
 import ProductContainer from './product/product_container';
 import NavHeader from "./header/header";
 import { AuthRoute } from "../util/route_util";
+import { withRouter } from "react-router-dom";
 
 
 const App = () => (

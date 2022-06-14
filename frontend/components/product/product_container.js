@@ -5,6 +5,7 @@ import { showAllProducts, showOneProduct } from '../../actions/product_actions';
 // import { showOneProduct } from '../../util/product_api_util';
 import { selectProduct } from '../../reducers/selectors';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, {match}) => {
   // const {products} = state.entities;

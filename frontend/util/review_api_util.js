@@ -16,6 +16,6 @@ export const showOneReview = reviewId => (
 export const showAllReviews = () => (
   $.ajax({
     method: 'GET',
-    url: `api/products/${productId}`
+    url: `api/reviews`
   })
 )

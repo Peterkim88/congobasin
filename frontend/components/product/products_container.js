@@ -3,6 +3,7 @@ import React from 'react';
 import Products from './products';
 import { showAllProducts } from '../../actions/product_actions';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
   const {products} = state.entities;
