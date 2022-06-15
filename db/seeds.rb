@@ -9,12 +9,13 @@
 
 User.destroy_all
 Product.destroy_all
+Review.destroy_all
 
 User.create({name: 'Peter Kim', email: 'peterkim@gmail.com', password: 'peterkim'})
 User.create({name: 'David Kim', email: 'davidkim@gmail.com', password: 'davidkim'})
 User.create({name: 'Demo user', email: 'demo@demo.com', password: 'demodemo'})
 
-Product.create({
+product1 = Product.create({
   product_name:
   'Scott ComfortPlus Toilet Paper, 36 Mega Rolls, 425 Sheets per Roll, 
   Septic-Safe, 1-Ply Toilet Tissue',
@@ -111,4 +112,10 @@ Product.create({
   'Health & Personal Care',
   product_quantity:
   200
+})
+Review.create({
+  author_id: 10, 
+  product_id: product1.id,
+  review_rating: 3, 
+  review_body: "this test is working!!"
 })

@@ -6,21 +6,22 @@ class Reviews extends React.Component {
     this.state = {};
   }
 
-  // componentDidMount(){
-  //   this.props.showAllReviews()
-  // }
+  componentDidMount(){
+    this.props.showAllReviews()
+  }
 
   render(){
-    // const reviews = Object.values(this.props.allReviews).map((review) => {
-    //   return (
-    //     <div>
-    //       All Reviews
-    //     </div>
-    //   )
-    // })
+    const reviews = this.props.selectedReviews.map((review) => {
+      return (
+        <div>
+          {review.review_body}
+        </div>
+      )
+    })
     return (
       <div>
-        All Reviews
+        {reviews}
+        {/* All Reviews */}
       </div>
     )
   }
