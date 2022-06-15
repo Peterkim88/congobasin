@@ -14,6 +14,8 @@ class Reviews extends React.Component {
     const reviews = this.props.selectedReviews.map((review) => {
       return (
         <div>
+          {review.author_name}
+          <br />
           {review.review_body}
         </div>
       )

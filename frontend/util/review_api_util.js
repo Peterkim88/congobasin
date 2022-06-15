@@ -19,3 +19,10 @@ export const showAllReviews = () => (
     url: `api/reviews`
   })
 )
+
+export const deleteReview = reviewId => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/reviews/${reviewId}`
+  })
+)

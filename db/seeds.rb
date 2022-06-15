@@ -11,9 +11,10 @@ User.destroy_all
 Product.destroy_all
 Review.destroy_all
 
-User.create({name: 'Peter Kim', email: 'peterkim@gmail.com', password: 'peterkim'})
-User.create({name: 'David Kim', email: 'davidkim@gmail.com', password: 'davidkim'})
-User.create({name: 'Demo user', email: 'demo@demo.com', password: 'demodemo'})
+user1 = User.create({name: 'Peter Kim', email: 'peterkim@gmail.com', password: 'peterkim'})
+user2 = User.create({name: 'David Kim', email: 'davidkim@gmail.com', password: 'davidkim'})
+user3 = User.create({name: 'Demo User', email: 'demo@demo.com', password: 'demodemo'})
+user4 = User.create({name: 'Test User', email: 'test@test.com', password: 'testtest'})
 
 product1 = Product.create({
   product_name:
@@ -31,7 +32,7 @@ product1 = Product.create({
   product_quantity:
   300
 })
-Product.create({
+product2 = Product.create({
   product_name:
   'Colgate Total Whitening Toothpaste 
   with Stannous Fluoride and Zinc, Exclusive, 
@@ -50,7 +51,7 @@ Product.create({
   product_quantity:
   300
 })
-Product.create({
+product3 = Product.create({
   product_name:
   'Pantene, Shampoo and Conditioner 2 in 1, Pro-V Classic 
   Clean, 25.4 Fl Oz, Pack of 2',
@@ -69,7 +70,7 @@ Product.create({
   product_quantity:
   300
 })
-Product.create({
+product4 = Product.create({
   product_name:
   '4 Pack Plush Velour 100% Cotton Beach Towels. Cabana Stripe 
   Pool Towels for Adults. (Charcoal Grey, 4 Pack- 30" x 60")',
@@ -91,7 +92,7 @@ Product.create({
   product_quantity:
   200
 })
-Product.create({
+product5 = Product.create({
   product_name:
   '4 Pack Plush Velour 100% Cotton Beach Towels. Cabana Stripe 
   Pool Towels for Adults. (Charcoal Grey, 4 Pack- 30" x 60")',
@@ -114,8 +115,30 @@ Product.create({
   200
 })
 Review.create({
-  author_id: 10, 
+  author_id: user4.id, 
+  author_name: user4.name,
   product_id: product1.id,
   review_rating: 3, 
-  review_body: "this test is working!!"
+  review_body: "review test is working!!"
+})
+Review.create({
+  author_id: user3.id, 
+  author_name: user3.name,
+  product_id: product1.id,
+  review_rating: 3, 
+  review_body: "review test is working!!"
+})
+Review.create({
+  author_id: user1.id, 
+  author_name: user1.name,
+  product_id: product2.id,
+  review_rating: 3, 
+  review_body: "review test is working!!"
+})
+Review.create({
+  author_id: user2.id, 
+  author_name: user2.name,
+  product_id: product3.id,
+  review_rating: 3, 
+  review_body: "review test is working!!"
 })
