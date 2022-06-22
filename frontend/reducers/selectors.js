@@ -10,3 +10,7 @@ export const selectReview = ({reviews}, productId) => {
     }
   });
 }
+
+export const currentUser = ({users}, userId) => {
+  return users[userId];
+}

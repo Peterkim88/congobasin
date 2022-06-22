@@ -7,7 +7,7 @@ import { selectReview } from "../../reducers/selectors";
 import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, {match}) => {
-  const productId = parseInt(match.params.id);
+  const productId = parseInt(match.params.productId);
   const selectedReviews = selectReview(state.entities, productId);
   return {
     selectedReviews

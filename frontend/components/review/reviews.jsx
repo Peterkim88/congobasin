@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewFormContainer from './review_form_container';
 
 class Reviews extends React.Component {
   constructor(props){
@@ -10,10 +11,10 @@ class Reviews extends React.Component {
     this.props.showAllReviews()
   }
 
-  render(){
+  reviews(){
     const reviews = this.props.selectedReviews.map((review) => {
       return (
-        <div>
+        <div className='review-box' key={`review-${review.id}`}>
           {review.author_name}
           <br />
           {review.review_body}
@@ -21,9 +22,17 @@ class Reviews extends React.Component {
       )
     })
     return (
+      reviews
+    );
+  }
+
+  render(){
+    return (
       <div>
-        {reviews}
-        {/* All Reviews */}
+        <div>
+          <ReviewFormContainer />
+        </div>
+        {this.reviews()}
       </div>
     )
   }

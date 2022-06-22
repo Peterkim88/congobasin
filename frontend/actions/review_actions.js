@@ -25,15 +25,15 @@ export const deleteCurrentReview = review => ({
   review
 })
 
-export const showAllReviews = reviews => dispatch => (
-  APIUtil.showAllReviews(reviews)
+export const showAllReviews = productId => dispatch => (
+  APIUtil.showAllReviews(productId)
     .then(reviews => (dispatch(showReviews(reviews))))
 );
 
-export const showOneReview = reviewId => dispatch => {
-  return APIUtil.showOneReview(reviewId)
-    .then(review => (dispatch(showReview(review))))
-};
+// export const showOneReview = reviewId => dispatch => {
+//   return APIUtil.showOneReview(reviewId)
+//     .then(review => (dispatch(showReview(review))))
+// };
 
 export const createReview = review => dispatch => (
   APIUtil.createReview(review)

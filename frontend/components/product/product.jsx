@@ -1,5 +1,6 @@
 import React from 'react';
 import Reviews from '../review/reviews_container';
+import { Link } from 'react-router-dom';
 
 class Product extends React.Component {
   constructor(props){
@@ -51,8 +52,12 @@ class Product extends React.Component {
           <div className='product-category'>
             {product.product_category}
           </div>
-          <div>
-            <Reviews/>
+          <div className='product-reviews-page' key={`reviews-${product.id}`}>
+            <Link to={`/products/${product.id}/reviews`}>
+              <button>
+                Ratings
+              </button>
+            </Link>
           </div>
         </div>
       </div>
