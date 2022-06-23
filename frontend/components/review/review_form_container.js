@@ -6,23 +6,27 @@ import { currentUser } from "../../reducers/selectors";
 import { createReview } from "../../actions/review_actions";
 import { withRouter } from "react-router";
 
-
-const mapStateToProps = (state) => {
-  // const productId = parseInt(match.params.productId);
-  // const selectedReviews = selectReview(state.entities, productId);
+const mapStateToProps = (state, {match}) => {
+  const productId = parseInt(match.params.productId);
+  const selectedReviews = selectReview(state.entities, productId);
   // return {
   //   selectedReviews
   // };
-  const currentUserId = parseInt(state.entities.users.id)
+  // const currentUser = state.entities.users
+  // console.log(currentUser)
+  const currentUserId = state.session.id
+  // console.log(currentUserId)
   return{
-    // currentUserId: currentUserId,
+    currentUserId,
+    selectedReviews,
+    productId,
     formType: 'Sumbit Review'
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (review) => dispatch(createReview(review))
+    processForm: (productId, review) => dispatch(createReview(productId, review))
   };
 };
 

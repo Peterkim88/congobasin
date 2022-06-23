@@ -7,7 +7,8 @@ class ReviewForm extends React.Component {
       author_id: '',
       product_id: '',
       review_rating: '',
-      review_body: ''
+      review_body: '',
+      author_name: 'Test User'
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.currentUser = this.setAuthorId.bind(this);
@@ -20,25 +21,43 @@ class ReviewForm extends React.Component {
     });
   }
 
+  componentDidMount(){
+    this.setProductId();
+    this.setAuthorId();
+  }
+
   handleSubmit(e){
     e.preventDefault();
+    const productId = parseInt(this.props.match.params.productId);
+    // console.log(productId)
     const review = Object.assign({}, this.state);
-    this.props.processForm(review);
+    this.props.processForm(productId, review);
   }
 
   setProductId(){
     const productId = parseInt(this.props.match.params.productId);
-    return this.state.product_id = productId;
+    // return this.state.product_id = productId;
+    this.setState({product_id: productId});
   }
 
   setAuthorId(){
-    const authorId = 25;
-    return this.state.author_id = authorId;
+    const authorId = this.props.currentUserId;
+    // console.log(this.props.currentUserId)
+    this.setState({author_id: authorId});
+  }
+
+  checkCurrentUserReview(){
+    let currentUserReview = null
+    this.props.selectedReviews.map(review => {
+      if (this.props.currentUserId === review.author_id){
+        currentUserReview = true
+      }
+    })
+    return currentUserReview;
   }
 
   newReviewForm(){
-    this.setProductId();
-    this.setAuthorId();
+    // console.log(this.state)
     // return (
     //   <div>
     //     {this.state.product_id}
@@ -63,7 +82,14 @@ class ReviewForm extends React.Component {
           </label> */}
           <label className='review-form-rating'>pick a number from 1 to 5
             <br />
-              1 2 3 4 5
+              <input type="radio" name='review_rating' id="rating1" value='1' onChange={this.update('review_rating')}/>
+              <input type="radio" name='review_rating' id="rating2" value='2' onChange={this.update('review_rating')}/>
+              <input type="radio" name='review_rating' id="rating3" value='3' onChange={this.update('review_rating')}/>
+              <input type="radio" name='review_rating' id="rating4" value='4' onChange={this.update('review_rating')}/>
+              <input type="radio" name='review_rating' id="rating5" value='5' onChange={this.update('review_rating')}/>
+              {/* ask how to make this into the stars and 
+              how to populate the lower ratings
+              while choosing the higher ones */}
             <br />
           </label>
           <label className='review-form-body'>leave a review!
@@ -84,11 +110,18 @@ class ReviewForm extends React.Component {
   }
 
   render(){
-    return(
-      <div>
-        {this.newReviewForm()}
-      </div>
-    )
+    // console.log(this.props)
+    // console.log(this.props.selectedReviews.id)
+    if (this.props.currentUserId !== null && this.checkCurrentUserReview() === null){
+      return(
+        <div>
+          {this.newReviewForm()}
+        </div>
+      )
+    }
+    // if (this.props.currentUserId !== null){
+    //   return {this.newReviewForm()}
+    // }
   }
 }
 

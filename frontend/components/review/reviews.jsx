@@ -5,10 +5,33 @@ class Reviews extends React.Component {
   constructor(props){
     super(props)
     this.state = {};
+    this.deleteReviewButton = this.deleteReviewButton.bind(this);
   }
 
   componentDidMount(){
     this.props.showAllReviews()
+  }
+
+  // componentDidUpdate(prevProps, ){
+    
+  // }
+
+  deleteReview(review){
+    return(
+      <div>
+        <button type="submit" on></button>
+      </div>
+    )
+  }
+
+  deleteReviewButton(review){
+    if (this.props.currentUserId === review.author_id){
+      return(
+        <button type="submit" onClick={this.deleteReview()}>
+          
+        </button>
+      )
+    }
   }
 
   reviews(){
@@ -18,6 +41,8 @@ class Reviews extends React.Component {
           {review.author_name}
           <br />
           {review.review_body}
+          <br />
+          {this.deleteReviewButton(review)}
         </div>
       )
     })
