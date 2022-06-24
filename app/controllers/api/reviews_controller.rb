@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      render "api/product/show"
+      render :show
     else
       render json: @review.errors.full_messages, status: 404
     end
@@ -18,11 +18,21 @@ class Api::ReviewsController < ApplicationController
     render :index
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    if @review.delete
+      render :show
+    else
+      render json: @review.errors.full_messages, status: 404
+    end
+  end
+
   private
 
   def review_params
     params.require(:review).permit(
       :author_id,
+      :author_name,
       :product_id,
       :review_rating,
       :review_body

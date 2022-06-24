@@ -1,22 +1,27 @@
 import { connect } from "react-redux";
 import React from 'react';
 import Reviews from "./reviews";
-import { showAllReviews } from "../../actions/review_actions";
+import { deleteReview, showAllReviews } from "../../actions/review_actions";
 import { Link } from "react-router-dom";
 import { selectReview } from "../../reducers/selectors";
+// import { currentUser } from "../../reducers/selectors";
 import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, {match}) => {
-  const productId = parseInt(match.params.id);
+  const productId = parseInt(match.params.productId);
   const selectedReviews = selectReview(state.entities, productId);
+  const currentUserId = state.session.id;
   return {
-    selectedReviews
+    selectedReviews,
+    currentUserId: currentUserId,
+    productId
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showAllReviews: () => dispatch(showAllReviews())
+    showAllReviews: () => dispatch(showAllReviews()),
+    deleteReview: (productId, reviewId) => dispatch(deleteReview(productId, reviewId))
   }
 };
 
