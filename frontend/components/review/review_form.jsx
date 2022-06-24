@@ -8,7 +8,7 @@ class ReviewForm extends React.Component {
       product_id: '',
       review_rating: '',
       review_body: '',
-      author_name: 'Test User'
+      author_name: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.currentUser = this.setAuthorId.bind(this);
@@ -24,6 +24,7 @@ class ReviewForm extends React.Component {
   componentDidMount(){
     this.setProductId();
     this.setAuthorId();
+    this.setAutherName();
   }
 
   handleSubmit(e){
@@ -44,6 +45,11 @@ class ReviewForm extends React.Component {
     const authorId = this.props.currentUserId;
     // console.log(this.props.currentUserId)
     this.setState({author_id: authorId});
+  }
+
+  setAutherName(){
+    const authorName = this.props.currentUserName;
+    this.setState({author_name: authorName});
   }
 
   checkCurrentUserReview(){

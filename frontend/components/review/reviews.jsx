@@ -16,19 +16,15 @@ class Reviews extends React.Component {
     
   // }
 
-  deleteReview(review){
-    return(
-      <div>
-        <button type="submit" on></button>
-      </div>
-    )
-  }
+  // deleteReview(productId, review){
+  //   deleteReview(productId, review)
+  // }
 
-  deleteReviewButton(review){
+  deleteReviewButton(productId, review){
     if (this.props.currentUserId === review.author_id){
       return(
-        <button type="submit" onClick={this.deleteReview()}>
-          
+        <button type="submit" onClick={() => {this.props.deleteReview(productId, review.id)}}>
+          Delete Review
         </button>
       )
     }
@@ -42,7 +38,7 @@ class Reviews extends React.Component {
           <br />
           {review.review_body}
           <br />
-          {this.deleteReviewButton(review)}
+          {this.deleteReviewButton(review.product_id, review)}
         </div>
       )
     })

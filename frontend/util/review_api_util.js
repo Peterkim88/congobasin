@@ -20,10 +20,9 @@ export const showAllReviews = productId => (
   })
 )
 
-export const deleteReview = (productId, review) => (
+export const deleteReview = (productId, reviewId) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/products/${productId}/reviews`,
-    data: {review}
+    url: `api/products/${productId}/reviews/${reviewId}`
   })
 )

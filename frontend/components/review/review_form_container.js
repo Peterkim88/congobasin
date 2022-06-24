@@ -3,7 +3,7 @@ import React from "react";
 import ReviewForm from "./review_form";
 import { selectReview } from "../../reducers/selectors";
 import { currentUser } from "../../reducers/selectors";
-import { createReview } from "../../actions/review_actions";
+import { createReview, deleteReview } from "../../actions/review_actions";
 import { withRouter } from "react-router";
 
 const mapStateToProps = (state, {match}) => {
@@ -15,9 +15,11 @@ const mapStateToProps = (state, {match}) => {
   // const currentUser = state.entities.users
   // console.log(currentUser)
   const currentUserId = state.session.id
+  const currentUserName = state.session.name
   // console.log(currentUserId)
   return{
     currentUserId,
+    currentUserName,
     selectedReviews,
     productId,
     formType: 'Sumbit Review'
