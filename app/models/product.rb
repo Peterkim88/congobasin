@@ -7,4 +7,6 @@ class Product < ApplicationRecord
     :product_quantity,
     presence: true
   
+  has_one_attached :product_image
+
 end
