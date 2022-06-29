@@ -6,6 +6,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import ProductsContainer from './product/products_container';
 import ProductContainer from './product/product_container';
 import ReviewsContainer from './review/reviews_container';
+import CartContainer from './cart/cart_container';
 import NavHeader from "./header/header";
 import { AuthRoute } from "../util/route_util";
 import { withRouter } from "react-router-dom";
@@ -20,6 +21,7 @@ const App = () => (
       <AuthRoute exact path='/signup' component={SignUpFormContainer} />
       <Route exact path='/products/:id' component={ProductContainer} />
       <Route exact path='/products/:productId/reviews' component={ReviewsContainer} />
+      <Route exact path='/cart' component={CartContainer} />
     </Switch>
   </div>
 )

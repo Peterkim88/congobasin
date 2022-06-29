@@ -39,6 +39,7 @@ class Reviews extends React.Component {
           {review.review_body}
           <br />
           {this.deleteReviewButton(review.product_id, review)}
+          <br />
         </div>
       )
     })

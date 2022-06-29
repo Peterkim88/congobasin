@@ -142,3 +142,23 @@ Review.create({
   review_rating: 3, 
   review_body: "review test is working!!"
 })
+CartItem.create({
+  user_id: user4.id,
+  product_id: product1.id,
+  quantity: 2
+})
+CartItem.create({
+  user_id: user4.id,
+  product_id: product3.id,
+  quantity: 1
+})
+CartItem.create({
+  user_id: user1.id,
+  product_id: product3.id,
+  quantity: 3
+})
+CartItem.create({
+  user_id: user1.id,
+  product_id: product2.id,
+  quantity: 5
+})
