@@ -13,6 +13,7 @@ const mapStateToProps = (state, {match}) => {
   // debugger
   // const selectedProduct = showOneProduct(productId);
   const selectedProduct = selectProduct(state.entities, productId);
+  console.log(selectedProduct)
   // debugger
   return {
     // allProducts: products,

@@ -8,6 +8,16 @@ export const selectProducts = ({products, cartItems}, userId) => {
   })
 };
 
+export const selectProduct = ({products}, productId) => {
+  // const Product = Object.values(products).map(product => {
+  //   if (product.id === productId){
+  //     return product
+  //   }
+  // })
+  // return Product[0]
+  return products[productId]
+};
+
 export const selectReview = ({reviews}, productId) => {
   return Object.values(reviews).filter(review => {
     if (productId === review.product_id){
