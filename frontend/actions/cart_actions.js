@@ -21,10 +21,10 @@ export const receiveItem = (item) => ({
   item
 });
 
-export const updateCurrentItem = (item) => ({
-  type: UPDATE_ITEM,
-  item
-});
+// export const updateCurrentItem = (item) => ({
+//   type: UPDATE_ITEM,
+//   item
+// });
 
 export const deleteCurrentItem = (item) => ({
   type: DELETE_ITEM,
@@ -40,17 +40,17 @@ export const showOneItem = (item) => dispatch => (
   APIUtil.showOneItem(item)
 )
 
-export const createItem = (item) => dispatch => (
-  APIUtil.createItem(item)
+export const createItem = (userId) => dispatch => (
+  APIUtil.createItem(userId)
     .then(item => (dispatch(receiveItem(item))))
 );
 
 export const updateItem = (item) => dispatch => (
   APIUtil.updateItem(item)
-    .then(item => (dispatch(updateCurrentItem(item))))
+    .then(item => (dispatch(receiveItem(item))))
 )
 
-export const deleteItem = (item) => dispatch => (
-  APIUtil.deleteItem(item)
+export const deleteItem = (userId, item) => dispatch => (
+  APIUtil.deleteItem(userId, item)
     .then(item => (dispatch(deleteCurrentItem(item))))
 );

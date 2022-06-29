@@ -15,9 +15,9 @@ const cartReducer = (state = {}, action) => {
       return action.items
     case RECEIVE_ITEM:
       return Object.assign({}, state, {[action.item.id]: action.item})
-    case UPDATE_ITEM:
-      let updatedState = Object.assign({}, state)
-      return updatedState;
+    // case UPDATE_ITEM:
+    //   let updatedState = Object.assign({}, state)
+    //   return updatedState;
     case DELETE_ITEM:
       let nextState = Object.assign({}, state)
       delete nextState[action.item.id]
