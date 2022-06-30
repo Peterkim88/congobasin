@@ -45,8 +45,8 @@ export const createItem = (userId) => dispatch => (
     .then(item => (dispatch(receiveItem(item))))
 );
 
-export const updateItem = (item) => dispatch => (
-  APIUtil.updateItem(item)
+export const updateItem = (userId, item) => dispatch => (
+  APIUtil.updateItem(userId, item)
     .then(item => (dispatch(receiveItem(item))))
 )
 
