@@ -40,8 +40,8 @@ export const showOneItem = (item) => dispatch => (
   APIUtil.showOneItem(item)
 )
 
-export const createItem = (userId) => dispatch => (
-  APIUtil.createItem(userId)
+export const createItem = (userId, item) => dispatch => (
+  APIUtil.createItem(userId, item)
     .then(item => (dispatch(receiveItem(item))))
 );
 

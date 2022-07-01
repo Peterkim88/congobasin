@@ -13,11 +13,11 @@ export const showOneItem = (item) => (
   })
 )
 
-export const createItem = (userId) => (
+export const createItem = (userId, item) => (
   $.ajax({
     method: 'POST',
     url: `api/user/${userId}/cart_items`,
-    data: {item}
+    data: {cart_item: item}
   })
 )
 

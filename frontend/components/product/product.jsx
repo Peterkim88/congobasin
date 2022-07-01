@@ -1,16 +1,21 @@
 import React from 'react';
 import Reviews from '../review/reviews_container';
-import { Link } from 'react-router-dom';
+import { Route, Switch, Link, NavLink } from 'react-router-dom';
+import LogInFormContainer from '../session_form/login_form_container'
 
 class Product extends React.Component {
   constructor(props){
     super(props)
-    this.state = {};
+    this.state = {
+      quantityToAdd: 1
+    };
+    this.quantityToAdd = this.quantityToAdd.bind(this)
   }
 
   componentDidMount(){
     // debugger
     this.props.showOneProduct(this.props.match.params.id);
+    this.props.showAllItems(this.props.userId)
   }
   
   renderErrors(){
@@ -23,6 +28,46 @@ class Product extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  quantityToAdd(){
+    const handleQuantity = event => {
+      const newQuantity = event.target.value
+      // console.log(newQuantity)
+      return this.setState({
+        quantityToAdd: newQuantity
+      })
+    }
+    return(
+      <input 
+        type="number"
+        onChange={handleQuantity} 
+        defaultValue={this.state.quantityToAdd} />
+    )
+  }
+
+  addItemToCart(){
+    const userId = this.props.userId;
+    const item = {
+      user_id: userId,
+      product_id: this.props.productId,
+      quantity: this.state.quantityToAdd
+    }
+    if (userId){
+      return(
+        <button onClick={() => this.props.createItem(userId, item)}>
+          Add to Cart
+        </button>
+      )
+    } else {
+      return(
+        <Link to="/login" className="login-from-add-to-cart">
+          <button>
+            Add to Cart
+          </button>
+        </Link>
+      )
+    }
   }
 
   render(){
@@ -51,6 +96,12 @@ class Product extends React.Component {
           </div>
           <div className='product-category'>
             {product.product_category}
+          </div>
+          <div>
+            {this.quantityToAdd()}
+          </div>
+          <div>
+            {this.addItemToCart()}
           </div>
           <div className='product-reviews-page' key={`reviews-${product.id}`}>
             <Link to={`/products/${product.id}/reviews`}>
