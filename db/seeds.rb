@@ -26,7 +26,7 @@ product1 = Product.create({
   3X stronger 1-layer toilet paper vs. the leading value brand.
   Thick & plush sheets provide a trusted, comforting clean.',
   product_price:
-  '$28.99',
+  28.99,
   product_category:
   'Health & Personal Care',
   product_quantity:
@@ -45,7 +45,7 @@ product2 = Product.create({
   Mint toothpaste for long lasting fresh breath.
   Helps prevent plaque, tartar, cavities and gingivitis.',
   product_price:
-  '$16.98',
+  16.98,
   product_category:
   'Health & Personal Care',
   product_quantity:
@@ -64,7 +64,7 @@ product3 = Product.create({
   looking. Nourishing formula with antioxidants ; Instant 
   strength,moisture, & shine - SILICONE-FREE',
   product_price:
-  '$16.99',
+  16.99,
   product_category:
   'Health & Personal Care',
   product_quantity:
@@ -86,7 +86,7 @@ product4 = Product.create({
   products, but if you're not 100% SATISFIED, our customer 
   service team will work with you to make it right!",
   product_price:
-  '$56.99',
+  56.99,
   product_category:
   'Health & Personal Care',
   product_quantity:
@@ -108,7 +108,7 @@ product5 = Product.create({
   products, but if you're not 100% SATISFIED, our customer 
   service team will work with you to make it right!",
   product_price:
-  '$56.99',
+  56.99,
   product_category:
   'Health & Personal Care',
   product_quantity:

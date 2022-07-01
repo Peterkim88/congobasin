@@ -6,25 +6,33 @@ import { showAllProducts, showOneProduct } from '../../actions/product_actions';
 import { selectProduct } from '../../reducers/selectors';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import { createItem } from '../../actions/cart_actions';
+import { showAllItems } from "../../actions/cart_actions";
 
 const mapStateToProps = (state, {match}) => {
   // const {products} = state.entities;
+  const userId = state.session.id
   const productId = parseInt(match.params.id);
+  const cartItems = state.entities.cart;
   // debugger
   // const selectedProduct = showOneProduct(productId);
   const selectedProduct = selectProduct(state.entities, productId);
-  console.log(selectedProduct)
+  // console.log(selectedProduct)
   // debugger
   return {
     // allProducts: products,
     productId,
-    selectedProduct
+    selectedProduct,
+    userId,
+    cartItems
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showOneProduct: id => dispatch(showOneProduct(id))
+    showAllItems: (userId) => dispatch(showAllItems(userId)),
+    showOneProduct: id => dispatch(showOneProduct(id)),
+    createItem: (userId, item) => dispatch(createItem(userId, item))
   };
 };
 

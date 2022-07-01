@@ -13,25 +13,25 @@ export const showOneItem = (item) => (
   })
 )
 
-export const createItem = (item) => (
+export const createItem = (userId, item) => (
   $.ajax({
     method: 'POST',
-    url: `api/cart_items/${item.id}`,
-    data: {item}
+    url: `api/user/${userId}/cart_items`,
+    data: {cart_item: item}
   })
 )
 
-export const updateItem = (item) => (
+export const updateItem = (userId, item) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/cart_items/${item.id}`,
-    data: {item}
+    url: `api/user/${userId}/cart_items/${item.id}`,
+    data: {cart_item: item}
   })
 )
 
-export const deleteItem = (item) => (
+export const deleteItem = (userId, item) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/cart_items`
+    url: `api/user/${userId}/cart_items/${item.id}`
   })
 )
