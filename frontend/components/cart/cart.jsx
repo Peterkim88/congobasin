@@ -69,7 +69,7 @@ class Cart extends React.Component {
       return newItem.quantity = newQuantity;
     }
     return(
-      <form type='submit'>
+      <div>
         <input 
           ref={`update-cart-${item.id}`}
           type="number"
@@ -78,7 +78,7 @@ class Cart extends React.Component {
         <button onClick={() => this.props.updateItem(userId, newItem)}>
           Update Quantity
         </button>
-      </form>
+      </div>
     )
   }
 
@@ -93,7 +93,7 @@ class Cart extends React.Component {
               <br />
               Price: {product.product_price}
               <br />
-              {console.log(item)}
+              {/* {console.log(item)} */}
               quantity: {this.updateQuantity(userId, item)}
               <br />
               subtotal: {product.product_price * item.quantity}

@@ -23,11 +23,12 @@
   display: flex;
   font-size: larger;
   word-wrap: break-word;
-  max-height: auto;
-	min-height: auto;
-	max-width: auto;
+  max-height: fit-content;
+	min-height: 30px;
+	max-width: fit-content;
 	min-width: auto;
   width: 75%;
+  height: 75%;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -36,11 +37,12 @@
 .products-listings-images{
   margin: auto;
   display: flex;
-	max-height: auto;
+	max-height: 70ex;
 	min-height: auto;
-	max-width: auto;
+	max-width: 60ex;
 	min-width: auto;
-	width: 75%;
+	height: 75%;
+  width: 75%;
   align-items: center;
   justify-content: center;
 }

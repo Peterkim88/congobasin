@@ -73,6 +73,7 @@ class Product extends React.Component {
   render(){
     // debugger
     const product = this.props.selectedProduct;
+    const imageUrl = product.image_url
     // debugger
     if (!product){
       return null;
@@ -80,7 +81,7 @@ class Product extends React.Component {
     return(
       <div className='product-div'>
         <div className='product-image-box'>
-          <img className='product-image' src={window.noImageURL} alt='product-img' />
+          <img className='product-image' src={window[imageUrl]} alt='product-img' />
         </div>
         <div key={`product-${product.id}`} className='product-info'>
           <div className='product-name'>
@@ -92,7 +93,7 @@ class Product extends React.Component {
             {product.product_description},
           </div>
           <div className='product-price'>
-            {product.product_price},
+            ${product.product_price},
           </div>
           <div className='product-category'>
             {product.product_category}

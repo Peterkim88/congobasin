@@ -75,8 +75,10 @@ button {
 }
 
 .search-bar-box {
-	max-height: 20ex;
-	max-width: auto;
+	display: flex;
+	margin-right: 5ex;
+	height: auto;
+	width: auto;
 	flex: 20;
 	align-items: center;
 }
@@ -84,9 +86,26 @@ button {
 .search-input {
 	margin-left: 5ex;
 	font: 18;
-	min-width: 85%;
-	min-height: 75%;
-	flex: 19;
+	min-width: auto;
+	min-height: 3ex;
+	flex: 16;
+}
+
+.search-button {
+	display: flex;
+	height: 4ex;
+	width: 4ex;
+	align-items: center;
+}
+
+.search-button .search-button-image {
+	display: block;
+	height: 100%;
+	width: auto;
+	align-items: center;
+	justify-content: space-around;
+	/* margin-left: 10%; */
+	/* margin-right: 40%; */
 }
 
 .login-box {
@@ -126,10 +145,10 @@ button {
 	max-width: 50%;
 	max-height: auto; */
 	display: block;
-	max-height: 8ex;
-	min-height: 8ex;
-	max-width: 8ex;
-	min-width: 8ex;
+	max-height: 5ex;
+	min-height: 5ex;
+	max-width: 5ex;
+	min-width: 5ex;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: auto;
@@ -140,5 +159,4 @@ button {
 .cart-button {
 	background-color: transparent;
 	outline-color: transparent;
-	
 }

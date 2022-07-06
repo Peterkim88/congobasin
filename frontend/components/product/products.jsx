@@ -29,17 +29,24 @@ class Products extends React.Component {
   render(){
     const products = Object.values(this.props.allProducts).map((product) => {
       if (product.product_quantity !== 0){
+        // const imageUrl = product.image_url
+        // const productImage = window.${imageUrl}
+        // console.log(imageUrl)
+        // console.log(productImage)
+        const imageUrl = product.image_url
+        console.log(product.image_url)
+        console.log(imageUrl)
         return (
           <div className="products-listings-box" key={`products-${product.id}`}>
             <Link to={`/products/${product.id}`}>
-              <img className='products-listings-images' src={window.noImageURL} alt='product-img' />
+              <img className='products-listings-images' src={window[imageUrl]} alt='product-img' />
               <p className='products-listings-names'>
                 {product.product_name}
               </p>
             </Link>
               {/* {product.product_description}, */}
               <p className='products-listings-prices'>
-                {product.product_price}
+                ${product.product_price}
               </p>
               {/* {product.product_category} */}
           </div>
