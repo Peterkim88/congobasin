@@ -104,6 +104,7 @@ button {
 	width: auto;
 	align-items: center;
 	justify-content: space-around;
+	margin: -0.6ex;
 	/* margin-left: 10%; */
 	/* margin-right: 40%; */
 }
