@@ -48,7 +48,8 @@ button {
 
 .top-header {
 	color: white;
-	background-color: rgb(44, 44, 61);
+	background-color: #13131c;
+	font-family: "Amazon Ember",Arial,sans-serif;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -160,4 +161,17 @@ button {
 .cart-button {
 	background-color: transparent;
 	outline-color: transparent;
+}
+
+.sub-header {
+	background-color: rgb(40, 43, 50);
+	font-family: "Amazon Ember",Arial,sans-serif;
+	/* margin-top: 5px;
+	margin-bottom: 5px; */
+	height: 5ex;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
 }

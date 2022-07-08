@@ -1,7 +1,7 @@
 import React from 'react';
 import Reviews from '../review/reviews_container';
 import { Route, Switch, Link, NavLink } from 'react-router-dom';
-import LogInFormContainer from '../session_form/login_form_container'
+import LogInFormContainer from '../session_form/login_form_container';
 
 class Product extends React.Component {
   constructor(props){
@@ -39,10 +39,14 @@ class Product extends React.Component {
       })
     }
     return(
-      <input 
-        type="number"
-        onChange={handleQuantity} 
-        defaultValue={this.state.quantityToAdd} />
+      <div className='quantity-to-add'>
+        Qty:
+        <input 
+          type="number"
+          onChange={handleQuantity} 
+          defaultValue={this.state.quantityToAdd} 
+          className='quantity-to-add-input' />
+      </div>
     )
   }
 
@@ -79,37 +83,66 @@ class Product extends React.Component {
       return null;
     }
     return(
-      <div className='product-div'>
-        <div className='product-image-box'>
-          <img className='product-image' src={window[imageUrl]} alt='product-img' />
-        </div>
-        <div key={`product-${product.id}`} className='product-info'>
-          <div className='product-name'>
-            {product.product_name},
+      <div>
+        <br />
+        <br />
+        <br />
+        <div className='product-page'>
+          <div className='product-image-box'>
+            <img className='product-image' src={window[imageUrl]} alt='product-img' />
           </div>
-          <div className='product-description'>
-            Description:
+          <br />
+          <div key={`product-${product.id}`} className='product-info'>
+            <div className='product-name'>
+              {product.product_name},
+            </div>
             <br />
-            {product.product_description},
+            <div className='product-reviews-info' key={`reviews-${product.id}`}>
+              {/* <div className='product-reviews-stars'>
+                star rating
+                <br />
+              </div> */}
+              <Link to={`/products/${product.id}/reviews`}>
+                <button>
+                  Ratings
+                </button>
+              </Link>
+            </div>
+            <br />
+            <br />
+            <div className='product-price'>
+              ${product.product_price}
+            </div>
+            <div>
+              {'& FREE Returns'}
+            </div>
+            <br />
+            <br />
+            <div className='product-description'>
+              Description:
+              <br />
+              {product.product_description},
+            </div>
+            <br />
+            <div className='product-category'>
+              Category: {product.product_category}
+            </div>
           </div>
-          <div className='product-price'>
-            ${product.product_price},
-          </div>
-          <div className='product-category'>
-            {product.product_category}
-          </div>
-          <div>
-            {this.quantityToAdd()}
-          </div>
-          <div>
-            {this.addItemToCart()}
-          </div>
-          <div className='product-reviews-page' key={`reviews-${product.id}`}>
-            <Link to={`/products/${product.id}/reviews`}>
-              <button>
-                Ratings
-              </button>
-            </Link>
+
+          <div className='product-add-to-cart'>
+            <div className='product-price'>
+              ${product.product_price}
+            </div>
+            <div>
+              {'& FREE Returns'}
+            </div>
+            <div>
+              {this.quantityToAdd()}
+            </div>
+            <br />
+            <div>
+              {this.addItemToCart()}
+            </div>
           </div>
         </div>
       </div>

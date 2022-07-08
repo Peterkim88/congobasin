@@ -100,7 +100,7 @@ class ReviewForm extends React.Component {
           </label>
           <label className='review-form-body'>leave a review!
             <br />
-              <input className='review-form-body-input'
+              <textarea className='review-form-body-input'
                 type="text" 
                 onChange={this.update('review_body')}  
               />

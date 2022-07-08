@@ -1,12 +1,24 @@
-.products-body{
+/* .splash-page {
+  background-color: gray;
   margin: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+} */
+
+.products-body{
+  background-color: lightgray;
+  /* margin: 20px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .products-listings-box{
+  background-color: white;
   display: flex;
   margin: auto;
   flex-direction: column;
@@ -37,9 +49,9 @@
 .products-listings-images{
   margin: auto;
   display: flex;
-	max-height: 70ex;
+	max-height: 60ex;
 	min-height: auto;
-	max-width: 60ex;
+	max-width: 50ex;
 	min-width: auto;
 	height: 75%;
   width: 75%;

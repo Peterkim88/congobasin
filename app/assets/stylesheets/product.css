@@ -1,27 +1,28 @@
-.product-box{
-  background-color: beige;
+.product-page{
+  /* background-color: beige; */
   margin: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: space-evenly; */
 }
 
 .product-image-box{
   margin: auto;
   display: flex;
-  max-height: auto;
-  min-height: auto;
-  max-width: auto;
-  min-width: auto;
-  width: 25%;
+  /* max-height: 50ex;
+  min-height: 50ex;
+  max-width: 50ex;
+  min-width: 50ex; */
+  /* width: 25%; */
   align-items: center;
   justify-content: center;
+  flex: 8
 }
 
 .product-info{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   flex-direction: column;
   max-height: auto;
@@ -29,8 +30,9 @@
   max-width: auto;
   min-width: auto;
   width: 25%;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  /* justify-content: top; */
+  flex: 8
 }
 
 .product-image{
@@ -40,33 +42,57 @@
   min-height: auto;
   max-width: auto;
   min-width: auto;
+  justify-content: center;
 }
 
 .product-name{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 30px;
   word-wrap: break-word;
 }
 
 
 .product-description{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 20px;
   word-wrap: break-word;
 }
 
 .product-price{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 24px;
   word-wrap: break-word;
 }
 
 .product-category{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 16px;
   word-wrap: break-word;
+}
+
+.product-add-to-cart {
+  display: flex;
+  flex-direction: column;
+  border-width: thin;
+  border: black;
+  flex: 4;
+  margin-left: auto;
+  align-items: center;
+  justify-content: top;
+}
+
+.quantity-to-add {
+  display: flex;
+  /* max-width: 5ex; */
+  flex-direction: row;
+}
+
+.quantity-to-add-input {
+  display: flex;
+  max-width: 5ex;
+  /* flex-direction: row; */
 }
