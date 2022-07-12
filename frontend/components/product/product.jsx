@@ -1,7 +1,9 @@
 import React from 'react';
 import Reviews from '../review/reviews_container';
 import { Route, Switch, Link, NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import LogInFormContainer from '../session_form/login_form_container';
+import ReviewsContainer from '../review/reviews_container';
 
 class Product extends React.Component {
   constructor(props){
@@ -87,7 +89,7 @@ class Product extends React.Component {
         <br />
         <br />
         <br />
-        <div className='product-page'>
+        <div className='product-section'>
           <div className='product-image-box'>
             <img className='product-image' src={window[imageUrl]} alt='product-img' />
           </div>
@@ -102,48 +104,55 @@ class Product extends React.Component {
                 star rating
                 <br />
               </div> */}
-              <Link to={`/products/${product.id}/reviews`}>
+              <HashLink to={`/products/${product.id}#reviews`}>
                 <button>
-                  Ratings
+                  Reviews
                 </button>
-              </Link>
+              </HashLink>
             </div>
             <br />
             <br />
-            <div className='product-price'>
+            <div className='product-price' key={`price-${product.id}`}>
               ${product.product_price}
             </div>
-            <div>
+            <div key={`free-returns-${product.id}`}>
               {'& FREE Returns'}
             </div>
             <br />
             <br />
-            <div className='product-description'>
+            <div className='product-description' key={`product-description-${product.id}`}>
               Description:
               <br />
               {product.product_description},
             </div>
             <br />
-            <div className='product-category'>
+            <div className='product-category' key={`product-category-${product.id}`}>
               Category: {product.product_category}
             </div>
           </div>
 
-          <div className='product-add-to-cart'>
-            <div className='product-price'>
-              ${product.product_price}
-            </div>
-            <div>
-              {'& FREE Returns'}
-            </div>
-            <div>
-              {this.quantityToAdd()}
-            </div>
-            <br />
-            <div>
-              {this.addItemToCart()}
+          <div className='product-add-to-cart' key={`add-to-cart-${product.id}`}>
+            <div className='product-add-to-cart-border' key={`add-to-cart-border-${product.id}`}>
+              <div className='product-price'>
+                ${product.product_price}
+              </div>
+              <div>
+                {'& FREE Returns'}
+              </div>
+              <br />
+              <br />
+              <div>
+                {this.quantityToAdd()}
+              </div>
+              {/* <br /> */}
+              <div>
+                {this.addItemToCart()}
+              </div>
             </div>
           </div>
+        </div>
+        <div id="reviews" className='product-review-section' key={`all-reviews-${product.id}`}>
+          <ReviewsContainer />
         </div>
       </div>
     )

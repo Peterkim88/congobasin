@@ -46,6 +46,10 @@ button {
 	background-color: rgb(225, 180, 122);
 }
 
+div{
+	font-family: "Amazon Ember",Arial,sans-serif;
+}
+
 .top-header {
 	color: white;
 	background-color: #13131c;
@@ -174,4 +178,12 @@ button {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-evenly;
+}
+
+.header-login-button{
+	text-decoration: none;
+}
+
+.header-signup-button{
+	text-decoration: none;
 }

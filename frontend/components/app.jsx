@@ -13,7 +13,7 @@ import { withRouter } from "react-router-dom";
 
 
 const App = () => (
-  <div>
+  <div className="full-page">
     <NavHeader />
     <Switch>
       <Route exact path='/' component={ProductsContainer} />

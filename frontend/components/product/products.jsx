@@ -40,7 +40,7 @@ class Products extends React.Component {
           <div key={`products-${product.id}`}>
             <br />
             <div className="products-listings-box">
-              <Link to={`/products/${product.id}`}>
+              <Link to={`/products/${product.id}`} className='link-to-product'>
                 <img className='products-listings-images' src={window[imageUrl]} alt='product-img' />
                 <br />
                 <p className='products-listings-names'>

@@ -7,7 +7,7 @@ import { createReview, deleteReview } from "../../actions/review_actions";
 import { withRouter } from "react-router";
 
 const mapStateToProps = (state, {match}) => {
-  const productId = parseInt(match.params.productId);
+  const productId = parseInt(match.params.id);
   const selectedReviews = selectReview(state.entities, productId);
   // return {
   //   selectedReviews

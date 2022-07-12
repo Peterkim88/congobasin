@@ -69,3 +69,19 @@
   align-items: center;
   justify-content: center;
 }
+
+.link-to-product {
+  text-decoration: none;
+}
+
+.link-to-product:link {
+  color:black
+}
+
+.link-to-product:hover {
+  color:rgb(63, 63, 224)
+}
+
+.link-to-product:active {
+  color:black
+}
