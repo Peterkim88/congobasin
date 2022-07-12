@@ -1,27 +1,30 @@
-.product-box{
-  background-color: beige;
+.product-section{
+  /* background-color: beige; */
   margin: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: space-evenly; */
 }
 
 .product-image-box{
   margin: auto;
   display: flex;
-  max-height: auto;
-  min-height: auto;
-  max-width: auto;
-  min-width: auto;
-  width: 25%;
+  /* max-height: 50ex;
+  min-height: 50ex;
+  max-width: 50ex;
+  min-width: 50ex; */
+  /* width: 25%; */
+  height: 50ex;
+  width: 50ex;
   align-items: center;
   justify-content: center;
+  flex: 5
 }
 
 .product-info{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   flex-direction: column;
   max-height: auto;
@@ -29,44 +32,80 @@
   max-width: auto;
   min-width: auto;
   width: 25%;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  /* justify-content: top; */
+  flex: 8
 }
 
 .product-image{
   margin: auto;
   display: flex;
-  max-height: auto;
+  /* max-height: auto;
   min-height: auto;
   max-width: auto;
-  min-width: auto;
+  min-width: auto; */
+  height: inherit;
+  width: auto;
+  justify-content: center;
 }
 
 .product-name{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 30px;
   word-wrap: break-word;
 }
 
 
 .product-description{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 20px;
   word-wrap: break-word;
 }
 
 .product-price{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 24px;
   word-wrap: break-word;
 }
 
 .product-category{
-  margin: auto;
+  /* margin: auto; */
   display: flex;
-  font-size: auto;
+  font-size: 16px;
   word-wrap: break-word;
+}
+
+.product-add-to-cart {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  margin-left: auto;
+  align-items: center;
+  justify-content: top;
+}
+
+.product-add-to-cart-border {
+  height: fit-content;
+  width: 16ex;
+  align-items: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: lightgray;
+}
+
+.quantity-to-add {
+  display: flex;
+  /* max-width: 5ex; */
+  flex-direction: row;
+}
+
+.quantity-to-add-input {
+  display: flex;
+  max-width: 5ex;
+  /* flex-direction: row; */
 }

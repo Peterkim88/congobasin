@@ -1,0 +1,169 @@
+.cart-page{
+  background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  min-height: 115ex;
+}
+
+.cart-checkout-container {
+  display: flex;
+  flex: 3;
+}
+
+.cart-all-items {
+  display: flex;
+  flex: 9;
+  flex-direction: column;
+}
+
+.cart-left-margin{
+  display: flex;
+  flex: 1;
+}
+
+/* .cart-right-margin{
+  display: flex;
+  flex: 1;
+} */
+
+.cart-item-box {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  height: fit-content;
+  margin-top: 5ex;
+}
+
+.cart-product-info{
+  font-size: 20px;
+  /* margin-top: 5ex; */
+  margin-left: 5ex;
+  /* margin-bottom: 5ex; */
+  /* margin: 5ex; */
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: inherit;
+  justify-content: left;
+  padding: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: lightgray;
+}
+
+.cart-product-image-box{
+  display: flex;
+  height: 15ex;
+  min-width: 15ex;
+}
+
+.cart-product-image {
+  display: flex;
+  height: inherit;
+}
+
+.cart-product-details{
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  margin-left: 5ex;
+  justify-content: center;
+}
+
+.cart-product-name{
+  display: flex;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  /* font-style: bold; */
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.update-quantity-input{
+  width: 30px;
+}
+
+.cart-checkout-box{
+  margin-top: 5ex;
+  height: 15ex;
+  width: fit-content;
+  align-items: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: lightgray;
+  background-color: white;
+}
+
+.cart-checkout-subtotal{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+button{
+  border-radius: 5px;
+}
+
+input{
+  border-radius: 5px;
+}
+
+.cart-checkout-button{
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.cart-product-price{
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.cart-update-quantity-button{
+  background-color: rgb(225, 180, 122);
+  font-size: 16px;
+}
+
+.cart-delete-button{
+  background-color: lightcoral;
+  font-size: 16px;
+}
+
+.cart-update-and-delete{
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-empty-message{
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 2.5ex;
+  margin-left: 5ex;
+  /* margin-bottom: 5ex; */
+  /* margin: 5ex; */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 40ex;
+  width: inherit;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: lightgray;
+}
+
+.cart-link-to-homepage{
+  font-size: 20px;
+  text-decoration: none;
+  color: blue;
+}
+
+.cart-thank-you{
+  font-size: 40px;
+}

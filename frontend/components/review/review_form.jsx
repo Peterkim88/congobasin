@@ -29,14 +29,14 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const productId = parseInt(this.props.match.params.productId);
+    const productId = parseInt(this.props.match.params.id);
     // console.log(productId)
     const review = Object.assign({}, this.state);
     this.props.processForm(productId, review);
   }
 
   setProductId(){
-    const productId = parseInt(this.props.match.params.productId);
+    const productId = parseInt(this.props.match.params.id);
     // return this.state.product_id = productId;
     this.setState({product_id: productId});
   }
@@ -75,7 +75,7 @@ class ReviewForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="review-form-box">
-          <h1 className='review-form-heading'>Submit a review for this product!</h1>
+          {/* <h1 className='review-form-heading'>Submit a review for this product!</h1> */}
           {/* <label className='review-form-product-id'>product id
             <br />
               {this.state.product_id}
@@ -86,7 +86,7 @@ class ReviewForm extends React.Component {
               {this.state.author_id}
             <br />
           </label> */}
-          <label className='review-form-rating'>pick a number from 1 to 5
+          <label className='review-form-rating'>Rate this product!
             <br />
               <input type="radio" name='review_rating' id="rating1" value='1' onChange={this.update('review_rating')}/>
               <input type="radio" name='review_rating' id="rating2" value='2' onChange={this.update('review_rating')}/>
@@ -98,9 +98,9 @@ class ReviewForm extends React.Component {
               while choosing the higher ones */}
             <br />
           </label>
-          <label className='review-form-body'>leave a review!
+          <label className='review-form-body'>Leave a review!
             <br />
-              <input className='review-form-body-input'
+              <textarea className='review-form-body-input'
                 type="text" 
                 onChange={this.update('review_body')}  
               />

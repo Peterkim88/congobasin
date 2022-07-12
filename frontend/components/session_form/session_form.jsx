@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
 
   renderErrors(){
     return (
-      <ul>
+      <ul className='session-errors'>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -64,7 +64,6 @@ class SessionForm extends React.Component {
             <h2 className='login-form-sub-heading'>
               Please {this.props.formType} or {this.props.navLink}
             </h2>            
-            {this.renderErrors()}
             <div className="login-form">
               <br/>
               <label className='login-label'>Name:
@@ -96,6 +95,7 @@ class SessionForm extends React.Component {
                   />
                 <br/>
               </label>
+              {this.renderErrors()}
               <br />
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
@@ -111,7 +111,6 @@ class SessionForm extends React.Component {
             <h2 className='login-form-sub-heading'>
               Please {this.props.formType} or {this.props.navLink}
             </h2>
-            {this.renderErrors()}
             <div className="login-form">
               <br/>
               <label className='login-label'>Email:
@@ -120,7 +119,7 @@ class SessionForm extends React.Component {
                     value={this.state.email}
                     onChange={this.update('email')}
                     className="login-input"
-                  />
+                    />
                 <br/>
               </label>
               <br />
@@ -130,9 +129,10 @@ class SessionForm extends React.Component {
                     value={this.state.password}
                     onChange={this.update('password')}
                     className="login-input"
-                  />
+                    />
                 <br />
               </label>
+              {this.renderErrors()}
               <br />
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>

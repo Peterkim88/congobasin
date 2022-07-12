@@ -34,21 +34,27 @@ class Products extends React.Component {
         // console.log(imageUrl)
         // console.log(productImage)
         const imageUrl = product.image_url
-        console.log(product.image_url)
-        console.log(imageUrl)
+        // console.log(product.image_url)
+        // console.log(imageUrl)
         return (
-          <div className="products-listings-box" key={`products-${product.id}`}>
-            <Link to={`/products/${product.id}`}>
-              <img className='products-listings-images' src={window[imageUrl]} alt='product-img' />
-              <p className='products-listings-names'>
-                {product.product_name}
-              </p>
-            </Link>
-              {/* {product.product_description}, */}
-              <p className='products-listings-prices'>
-                ${product.product_price}
-              </p>
-              {/* {product.product_category} */}
+          <div key={`products-${product.id}`}>
+            <br />
+            <div className="products-listings-box">
+              <Link to={`/products/${product.id}`} className='link-to-product'>
+                <img className='products-listings-images' src={window[imageUrl]} alt='product-img' />
+                <br />
+                <p className='products-listings-names'>
+                  {product.product_name}
+                </p>
+              </Link>
+              <br />
+                {/* {product.product_description}, */}
+                <p className='products-listings-prices'>
+                  ${product.product_price}
+                </p>
+                {/* {product.product_category} */}
+            </div>
+            <br />
           </div>
       )}}
     );
