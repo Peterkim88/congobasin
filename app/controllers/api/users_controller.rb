@@ -6,12 +6,17 @@ class Api::UsersController < ApplicationController
 
   def create(user_params)
     @user = User.new(user_params)
+    # @user = User.new(
+    #   params[:user][:name],
+    #   params[:user][:email],
+    #   params[:user][:password]
+    # )
 
     if @user.save
       login(@user)
       render "api/users/show"
     else
-      render json: @user.errors.full_messages, status: 402
+      render json: ["Invalid email/password combination"], status: 401
     end
   end
 

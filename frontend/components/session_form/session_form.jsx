@@ -28,15 +28,17 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(){
-    return (
-      <ul className='session-errors'>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors){
+      return (
+        <ul className='session-errors'>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   breaks(){
@@ -139,7 +141,11 @@ class SessionForm extends React.Component {
           </form>
         </div>
     );
-    return this.props.formType === 'login' ? userLoginForm : userSignupForm;
+    if (this.props.formType === 'login'){
+      return userLoginForm;
+    } else {
+      return userSignupForm;
+    }
   }
 }
 
