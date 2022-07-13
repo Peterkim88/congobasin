@@ -16,8 +16,8 @@
   max-width: 50ex;
   min-width: 50ex; */
   /* width: 25%; */
-  height: 50ex;
-  width: 50ex;
+  /* height: 50ex;
+  width: 50ex; */
   align-items: center;
   justify-content: center;
   flex: 5
@@ -44,8 +44,8 @@
   min-height: auto;
   max-width: auto;
   min-width: auto; */
-  height: inherit;
-  width: auto;
+  height: auto;
+  width: 90%;
   justify-content: center;
 }
 
