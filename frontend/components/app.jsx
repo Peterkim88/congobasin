@@ -11,19 +11,22 @@ import NavHeader from "./header/header";
 import NavFooter from "./footer/footer";
 import { AuthRoute } from "../util/route_util";
 import { withRouter } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 
 
 const App = () => (
   <div className="full-page">
     <NavHeader />
-    <Switch>
-      <Route exact path='/' component={ProductsContainer} />
-      <AuthRoute exact path='/login' component={LogInFormContainer} />
-      <AuthRoute exact path='/signup' component={SignUpFormContainer} />
-      <Route exact path='/products/:id' component={ProductContainer} />
-      {/* <Route exact path='/products/:productId/reviews' component={ReviewsContainer} /> */}
-      <Route exact path='/cart' component={CartContainer} />
-    </Switch>
+    <ScrollToTop>
+      <Switch>
+        <Route exact path='/' component={ProductsContainer} />
+        <AuthRoute exact path='/login' component={LogInFormContainer} />
+        <AuthRoute exact path='/signup' component={SignUpFormContainer} />
+        <Route exact path='/products/:id' component={ProductContainer} />
+        {/* <Route exact path='/products/:productId/reviews' component={ReviewsContainer} /> */}
+        <Route exact path='/cart' component={CartContainer} />
+      </Switch>
+    </ScrollToTop>
   </div>
 )
 

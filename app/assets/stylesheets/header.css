@@ -50,8 +50,19 @@ div{
 	font-family: "Amazon Ember",Arial,sans-serif;
 }
 
+.nav-header {
+	margin: none;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
 .top-header {
 	color: white;
+	height: 60px;
+	width: 100%;
+	/* position: fixed; */
 	background-color: #13131c;
 	font-family: "Amazon Ember",Arial,sans-serif;
 	display: flex;
@@ -170,16 +181,20 @@ div{
 .sub-header {
 	background-color: rgb(40, 43, 50);
 	font-family: "Amazon Ember",Arial,sans-serif;
+	/* position: fixed; */
 	/* margin-top: 5px;
 	margin-bottom: 5px; */
 	height: 40px;
+	width: 100%;
 	color: white;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;
-	padding-right: 60px;
-	padding-left: 5px;
+	text-align: center;
+	/* justify-content: space-between; */
+	/* margin-right: 60px; */
+	/* padding-right: 60px; */
+	/* padding-left: 5px; */
 }
 
 .header-login-button{
@@ -188,4 +203,37 @@ div{
 
 .header-signup-button{
 	text-decoration: none;
+}
+
+.cb-image-box{
+	/* margin-top: 100px; */
+	background-color:lightgray;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  position: static;
+  width: 100%;
+  height: 60%;
+}
+
+.sub-header-categories {
+	width: fit-content;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.sub-header-categories-section {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	text-align: center;
+}
+
+.sub-header-spacer{
+	width: 22%;
+}
+
+.sub-header-profile-links{
+	align-content: flex-end;
+	justify-content: center;
 }

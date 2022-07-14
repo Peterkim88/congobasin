@@ -1,6 +1,6 @@
 .product-section{
   /* background-color: beige; */
-  margin: 20px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,7 +20,7 @@
   width: 50ex; */
   align-items: center;
   justify-content: center;
-  flex: 5
+  flex: 3
 }
 
 .product-info{
@@ -89,7 +89,7 @@
 
 .product-add-to-cart-border {
   height: fit-content;
-  width: 16ex;
+  width: fit-content;
   align-items: center;
   padding: 5px;
   border-style: solid;
@@ -106,6 +106,6 @@
 
 .quantity-to-add-input {
   display: flex;
-  max-width: 5ex;
+  max-width: 30px;
   /* flex-direction: row; */
 }

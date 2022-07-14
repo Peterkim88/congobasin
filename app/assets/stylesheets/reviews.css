@@ -55,7 +55,7 @@
 } */
 
 .product-reviews-box{
-  margin: -15px;
+  margin: -32px;
   display: flex;
   flex-direction: column;
   border-top-style: solid;
@@ -86,7 +86,7 @@
   width: 50ex;
   /* align-items: center;
   justify-content: center; */
-  flex: 5
+  flex: 3
 }
 
 .review-right-margin{
@@ -100,4 +100,15 @@
 
 .product-reviews-heading{
   font-size: 20px;
+}
+
+.single-review-star-box{
+  display: flex;
+  height: 15px;
+  width: auto;
+}
+
+.single-review-star-image{
+  display: flex;
+  height: 100%;
 }

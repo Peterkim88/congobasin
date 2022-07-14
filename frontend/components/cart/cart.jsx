@@ -185,14 +185,19 @@ class Cart extends React.Component {
   render(){
     return(
       <div className='cart-full-page'>
+        <div className='cart-heading'>
+          <div className='cart-heading-left-margin'></div>
+          <div className='cart-heading-message'>Your Items</div>
+          <div className='cart-checkout-container'>
+            {this.checkOut()}
+          </div>
+        </div>
         <div className='cart-page'>
           <div className='cart-left-margin'></div>
           <div className='cart-all-items'>
             {this.cartItems()}
           </div>
-          <div className='cart-checkout-container'>
-            {this.checkOut()}
-          </div>
+          <div className='cart-heading-right-margin'></div>
           <div className='cart-right-margin'></div>
         </div>
         <div className="footer2">
