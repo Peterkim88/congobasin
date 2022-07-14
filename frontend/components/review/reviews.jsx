@@ -4,7 +4,10 @@ import ReviewFormContainer from './review_form_container';
 class Reviews extends React.Component {
   constructor(props){
     super(props)
-    this.state = {};
+    this.state = {
+      reviewCount: 0,
+      reviewTotal: 0
+    };
     this.deleteReviewButton = this.deleteReviewButton.bind(this);
   }
 
@@ -30,6 +33,40 @@ class Reviews extends React.Component {
     }
   }
 
+  showStars(reviewRating){
+    if (reviewRating === 1){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.oneStarRatingURL} alt="one star" />
+        </div>
+      )
+    } else if (reviewRating === 2){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.twoStarRatingURL} alt="two star" />
+        </div>
+      )
+    } else if (reviewRating === 3){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.threeStarRatingURL} alt="three star" />
+        </div>
+      )
+    } else if (reviewRating === 4){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.fourStarRatingURL} alt="four star" />
+        </div>
+      )
+    } else if (reviewRating === 5){
+      return (
+        <div className='single-review-star-box'>
+          <img className='single-review-star-image' src={window.fiveStarRatingURL} alt="five star" />
+        </div>
+      )
+    } 
+  }
+
   reviews(){
     const reviews = this.props.selectedReviews.map((review) => {
       return (
@@ -38,10 +75,13 @@ class Reviews extends React.Component {
             <div className='review-author-name'>
               {review.author_name}
             </div>
+            {/* <div className='single-review-star-box'> */}
+              {this.showStars(review.review_rating)}
+            {/* </div> */}
             <br />
             {review.review_body}
             <br />
-            <br />
+            {/* <br /> */}
             {this.deleteReviewButton(review.product_id, review)}
           </div>
           <br />
@@ -72,6 +112,7 @@ class Reviews extends React.Component {
   // }
 
   render(){
+    // const averageStarRating = this.averageReviewStars();
     return (
       <div id='review-anchor' className='reviews-page'>
         <br />

@@ -6,13 +6,14 @@ class ReviewForm extends React.Component {
     this.state = {
       author_id: '',
       product_id: '',
-      review_rating: '',
+      review_rating: 1,
       review_body: '',
       author_name: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.currentUser = this.setAuthorId.bind(this);
     this.productId = this.setProductId.bind(this);
+    this.newReviewForm = this.newReviewForm.bind(this);
   }
 
   update(field){
@@ -26,6 +27,10 @@ class ReviewForm extends React.Component {
     this.setAuthorId();
     this.setAutherName();
   }
+
+  // componentDidUpdate(){
+  //   return this.showStars(this.state.review_rating)
+  // }
 
   handleSubmit(e){
     e.preventDefault();
@@ -62,6 +67,40 @@ class ReviewForm extends React.Component {
     return currentUserReview;
   }
 
+  showStars(reviewRating){
+    if (reviewRating === 1){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.oneStarRatingURL} alt="one star" />
+        </div>
+      )
+    } else if (reviewRating === 2){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.twoStarRatingURL} alt="two star" />
+        </div>
+      )
+    } else if (reviewRating === 3){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.threeStarRatingURL} alt="three star" />
+        </div>
+      )
+    } else if (reviewRating === 4){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.fourStarRatingURL} alt="four star" />
+        </div>
+      )
+    } else if (reviewRating === 5){
+      return (
+        <div className='single-review-star-box'>
+          <img className='single-review-star-image' src={window.fiveStarRatingURL} alt="five star" />
+        </div>
+      )
+    } 
+  }
+
   newReviewForm(){
     // console.log(this.state)
     // return (
@@ -86,18 +125,21 @@ class ReviewForm extends React.Component {
               {this.state.author_id}
             <br />
           </label> */}
-          <label className='review-form-rating'>Rate this product!
-            <br />
-              <input type="radio" name='review_rating' id="rating1" value='1' onChange={this.update('review_rating')}/>
-              <input type="radio" name='review_rating' id="rating2" value='2' onChange={this.update('review_rating')}/>
-              <input type="radio" name='review_rating' id="rating3" value='3' onChange={this.update('review_rating')}/>
-              <input type="radio" name='review_rating' id="rating4" value='4' onChange={this.update('review_rating')}/>
-              <input type="radio" name='review_rating' id="rating5" value='5' onChange={this.update('review_rating')}/>
-              {/* ask how to make this into the stars and 
-              how to populate the lower ratings
-              while choosing the higher ones */}
-            <br />
-          </label>
+          <div>
+            <div className='review-form-rating'>Rate this product!
+              <br />
+                <input type="radio" name='review_rating' id="rating1" value='1' onChange={this.update('review_rating')}/>
+                <input type="radio" name='review_rating' id="rating2" value='2' onChange={this.update('review_rating')}/>
+                <input type="radio" name='review_rating' id="rating3" value='3' onChange={this.update('review_rating')}/>
+                <input type="radio" name='review_rating' id="rating4" value='4' onChange={this.update('review_rating')}/>
+                <input type="radio" name='review_rating' id="rating5" value='5' onChange={this.update('review_rating')}/>
+                {/* {() => this.showStars(this.state.review_rating)} */}
+                {/* ask how to make this into the stars and 
+                how to populate the lower ratings
+                while choosing the higher ones */}
+              <br />
+            </div>
+          </div>
           <label className='review-form-body'>Leave a review!
             <br />
               <textarea className='review-form-body-input'

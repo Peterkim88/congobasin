@@ -11,14 +11,18 @@ class Product extends React.Component {
     super(props)
     this.state = {
       quantityToAdd: 1
+      // reviewCount: 0,
+      // reviewTotal: 0
     };
-    this.quantityToAdd = this.quantityToAdd.bind(this)
+    this.quantityToAdd = this.quantityToAdd.bind(this);
+    // this.allReviewRatingState = this.allReviewRatingState.bind(this);
+    this.averageReviewStars = this.averageReviewStars.bind(this);
   }
 
   componentDidMount(){
     // debugger
     this.props.showOneProduct(this.props.match.params.id);
-    this.props.showAllItems(this.props.userId)
+    this.props.showAllItems(this.props.userId);
   }
   
   renderErrors(){
@@ -77,6 +81,76 @@ class Product extends React.Component {
     }
   }
 
+  showStars(reviewRating){
+    if (reviewRating === 1){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.oneStarRatingURL} alt="one star" />
+        </div>
+      )
+    } else if (reviewRating === 2){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.twoStarRatingURL} alt="two star" />
+        </div>
+      )
+    } else if (reviewRating === 3){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.threeStarRatingURL} alt="three star" />
+        </div>
+      )
+    } else if (reviewRating === 4){
+      return (
+        <div className='single-review-star-box'>
+          <img src={window.fourStarRatingURL} alt="four star" />
+        </div>
+      )
+    } else if (reviewRating === 5){
+      return (
+        <div className='single-review-star-box'>
+          <img className='single-review-star-image' src={window.fiveStarRatingURL} alt="five star" />
+        </div>
+      )
+    } 
+  }
+
+  // allReviewRatingState(reviewRating){
+  //   const newCount = this.state.reviewCount + 1;
+  //   const newTotal = this.state.reviewTotal + reviewRating;
+  //   this.setState({
+  //     reviewCount: newCount,
+  //     reviewTotal: newTotal
+  //   })
+  // }
+
+  averageReviewStars(){
+    const average = this.state.reviewTotal / this.state.reviewCount;
+    return average;
+  }
+
+  showAverageReviewRatings(){
+    // this.props.selectedReviews.map((review) => {
+    //   const newCount = this.state.reviewCount + 1;
+    //   const newTotal = this.state.reviewTotal + review.review_rating;
+    //   this.setState({
+    //     reviewCount: newCount,
+    //     reviewTotal: newTotal
+    //   })
+    // });
+    let reviewCount = 0;
+    let newTotal = 0;
+    this.props.selectedReviews.map((review) => {
+      reviewCount += 1;
+      newTotal += review.review_rating;
+    })
+    const average = newTotal / reviewCount;
+    const stars = this.showStars(average);
+    return(
+      stars
+    )
+  }
+
   render(){
     // debugger
     const product = this.props.selectedProduct;
@@ -106,6 +180,7 @@ class Product extends React.Component {
                 <br />
               </div> */}
               <HashLink to={`/products/${product.id}#reviews`}>
+                {this.showAverageReviewRatings()}
                 <button>
                   Reviews
                 </button>
@@ -152,8 +227,12 @@ class Product extends React.Component {
             </div>
           </div>
         </div>
-        <div id="reviews" className='product-review-section' key={`all-reviews-${product.id}`}>
-          <ReviewsContainer />
+        <div className='product-reviews-page-box'>
+          <div></div>
+          <div id="reviews" className='product-review-section' key={`all-reviews-${product.id}`}>
+            <ReviewsContainer />
+          </div>
+          <div></div>
         </div>
         <div className="footer2">
           <NavFooter />
