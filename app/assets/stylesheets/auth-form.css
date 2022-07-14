@@ -1,4 +1,5 @@
 .login-form-container {
+  margin-top: 150px;
   font-size: 18;
   text-align: center;
   align-items: center;
@@ -20,6 +21,7 @@
 
 .session-submit {
 	background-color: rgb(225, 180, 122);
+  font-size: 20px;
 }
 
 .login-form-heading {

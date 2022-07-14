@@ -62,14 +62,14 @@ class Product extends React.Component {
     }
     if (userId){
       return(
-        <button onClick={() => this.props.createItem(userId, item)}>
+        <button className='cart-add-button' onClick={() => this.props.createItem(userId, item)}>
           Add to Cart
         </button>
       )
     } else {
       return(
         <Link to="/login" className="login-from-add-to-cart">
-          <button>
+          <button className='cart-add-button'>
             Add to Cart
           </button>
         </Link>

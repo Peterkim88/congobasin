@@ -1,15 +1,17 @@
-/* .splash-page {
-  background-color: gray;
-  margin: 20px;
+.splash-page {
+  background-color: lightgray;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  height: 100%;
   width: 100%;
-} */
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+}
 
 .products-body{
-  background-color: lightgray;
-  /* margin: 20px; */
+  background-color: transparent;
+  position: static;
+  margin-top: -20%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,12 +24,14 @@
   display: flex;
   margin: auto;
   flex-direction: column;
-	max-height: 70ex;
+  width: 400px;
+  height: 600px;
+	/* max-height: 70ex;
 	min-height: 70ex;
 	max-width: 60ex;
-	min-width: 60ex;
+	min-width: 60ex; */
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .products-listings-names{
@@ -35,26 +39,28 @@
   display: flex;
   font-size: larger;
   word-wrap: break-word;
-  max-height: fit-content;
+  /* max-height: fit-content;
 	min-height: 30px;
 	max-width: fit-content;
-	min-width: auto;
-  width: 75%;
-  height: 75%;
+	min-width: auto; */
+  width: 80%;
+  height: 25%;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   text-decoration: none;
 }
 
 .products-listings-images{
   margin: auto;
   display: flex;
-	max-height: 60ex;
+  /* height: 60%; */
+	/* max-height: 60ex;
 	min-height: auto;
 	max-width: 50ex;
-	min-width: auto;
-	height: 75%;
-  width: 75%;
+	min-width: auto; */
+  /* width: 85%; */
+  height: 60%;
+  width: 80%;
   align-items: center;
   justify-content: center;
 }
@@ -67,21 +73,41 @@
 	max-width: auto;
 	min-width: auto;
   align-items: center;
-  justify-content: center;
+  justify-content: bottom;
 }
 
 .link-to-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
   text-decoration: none;
 }
 
 .link-to-product:link {
-  color:black
+  color:black;
 }
 
 .link-to-product:hover {
-  color:rgb(63, 63, 224)
+  color:rgb(63, 63, 224);
 }
 
 .link-to-product:active {
-  color:black
+  color:black;
+}
+
+.link-to-product:visited {
+  color: black;
+}
+
+.cb-image{
+	padding: 100px;
+  width: 80%;
+	position: static;
+}
+
+.full-header{
+	display: flex;
+	flex-direction: column;
 }

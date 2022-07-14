@@ -43,29 +43,34 @@ class Products extends React.Component {
             <div className="products-listings-box">
               <Link to={`/products/${product.id}`} className='link-to-product'>
                 <img className='products-listings-images' src={window[imageUrl]} alt='product-img' />
-                <br />
+                  {/* <br /> */}
                 <p className='products-listings-names'>
                   {product.product_name}
                 </p>
-              </Link>
-              <br />
-                {/* {product.product_description}, */}
+                {/* <br /> */}
+                  {/* {product.product_description}, */}
                 <p className='products-listings-prices'>
                   ${product.product_price}
                 </p>
-                {/* {product.product_category} */}
+                  {/* {product.product_category} */}
+              </Link>
             </div>
             <br />
           </div>
       )}}
     );
     return(
-      <div className='products-body'>
-        <div className='products-body'>
-          {products}
+      <div className='splash-page'>
+        <div className='cb-image-box'>
+          <img className='cb-image' src={window.congoBasinScenaryURL} alt="background-image" />
         </div>
-        <div className="footer2">
-          <NavFooter />
+        <div className='products-body'>
+          <div className='products-body'>
+            {products}
+          </div>
+          <div className="footer2">
+            <NavFooter />
+          </div>
         </div>
       </div>
     )
