@@ -8,9 +8,10 @@ class SessionForm extends React.Component {
       email: '',
       password: ''
     };
-    // this.userLoginForm = this.userLoginForm.bind(this);
-    // this.userSignupForm = this.userSignupForm.bind(this);
+    this.userLoginForm = this.userLoginForm.bind(this);
+    this.userSignupForm = this.userSignupForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleDemo = this.handleDemo(this);
     // this.update = this.update.bind(this);
     // this.renderErrors = this.renderErrors.bind(this);
   }
@@ -27,18 +28,25 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  // handleDemo(e){
+  //   e.preventDefault();
+  //   const user = {
+  //     email: 'demo@demo.com',
+  //     password: 'demodemo'
+  //   }
+  //   this.props.processForm(user);
+  // }
+
   renderErrors(){
-    if (this.props.errors){
-      return (
-        <ul className='session-errors'>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    }
+    return (
+      <ul className='session-errors'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   breaks(){
@@ -56,7 +64,7 @@ class SessionForm extends React.Component {
     )
   }
   
-  render(){
+  userSignupForm(){
     const userSignupForm = (
       <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -104,6 +112,10 @@ class SessionForm extends React.Component {
           </form>
         </div>
     );
+    return userSignupForm;
+  }
+
+  userLoginForm(){
     const userLoginForm = (
       <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -139,12 +151,17 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
+              {/* <button onClick={(e) => this.handleDemo(e)}>Try Demo</button> */}
         </div>
     );
+    return userLoginForm;
+  }
+
+  render(){
     if (this.props.formType === 'login'){
-      return userLoginForm;
-    } else {
-      return userSignupForm;
+      return this.userLoginForm();
+    } else if (this.props.formType === 'signup') {
+      return this.userSignupForm();
     }
   }
 }
