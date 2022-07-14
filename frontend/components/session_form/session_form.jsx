@@ -1,4 +1,5 @@
 import React from 'react';
+import NavFooter from '../footer/footer';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -110,6 +111,9 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
+          <div className="footer2">
+            <NavFooter />
+          </div>
         </div>
     );
     return userSignupForm;
@@ -151,6 +155,9 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
+          <div className="footer2">
+            <NavFooter />
+          </div>
               {/* <button onClick={(e) => this.handleDemo(e)}>Try Demo</button> */}
         </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavFooter from '../footer/footer';
 
 class Products extends React.Component {
   constructor(props){
@@ -60,7 +61,12 @@ class Products extends React.Component {
     );
     return(
       <div className='products-body'>
+        <div className='products-body'>
           {products}
+        </div>
+        <div className="footer2">
+          <NavFooter />
+        </div>
       </div>
     )
   }

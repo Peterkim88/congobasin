@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import SearchBar from './search/search';
+import NavFooter from '../footer/footer';
 
 const NavHeader = () => (
   <div>
@@ -18,6 +19,7 @@ const NavHeader = () => (
       </div>
     </header>
     <div className='sub-header'>
+      <NavFooter />
       <div>All</div>
       <div>Prime Video</div>
       <div>Amazon Basics</div>
@@ -27,11 +29,6 @@ const NavHeader = () => (
       <div>Prime</div>
       <div>Shopper Toolkit</div>
       <div>Health & Household</div>
-      <div>Coupons</div>
-      <div>Pharmacy</div>
-      <div>Amazon Launchpad</div>
-      <div>Beauty & Personal Care</div>
-      <div>Pet Supplies</div>
     </div>
   </div>
 )

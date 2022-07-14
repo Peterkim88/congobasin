@@ -8,6 +8,7 @@ import ProductContainer from './product/product_container';
 import ReviewsContainer from './review/reviews_container';
 import CartContainer from './cart/cart_container';
 import NavHeader from "./header/header";
+import NavFooter from "./footer/footer";
 import { AuthRoute } from "../util/route_util";
 import { withRouter } from "react-router-dom";
 

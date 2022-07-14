@@ -2,6 +2,7 @@ import React from 'react';
 import { showOneProduct } from '../../actions/product_actions';
 import { selectProduct } from '../../reducers/selectors';
 import { Link } from 'react-router-dom';
+import NavFooter from '../footer/footer';
 
 class Cart extends React.Component {
   constructor(props){
@@ -183,16 +184,21 @@ class Cart extends React.Component {
 
   render(){
     return(
-      <div className='cart-page'>
-        <div className='cart-left-margin'></div>
-        <div className='cart-all-items'>
-          {this.cartItems()}
+      <div className='cart-full-page'>
+        <div className='cart-page'>
+          <div className='cart-left-margin'></div>
+          <div className='cart-all-items'>
+            {this.cartItems()}
+          </div>
+          <div className='cart-checkout-container'>
+            {this.checkOut()}
+          </div>
+          <div className='cart-right-margin'></div>
         </div>
-        <div className='cart-checkout-container'>
-          {this.checkOut()}
+        <div className="footer2">
+          <NavFooter />
         </div>
-        <div className='cart-right-margin'></div>
-      </div>
+      </div>     
     )
   }
 }
