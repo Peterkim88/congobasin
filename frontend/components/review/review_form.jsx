@@ -8,7 +8,8 @@ class ReviewForm extends React.Component {
       product_id: '',
       review_rating: 1,
       review_body: '',
-      author_name: ''
+      author_name: '',
+      starImgURL: window.zeroStarRatingURL
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.currentUser = this.setAuthorId.bind(this);
@@ -17,9 +18,31 @@ class ReviewForm extends React.Component {
   }
 
   update(field){
+    // debugger
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+    // console.log(this.state.review_rating)
+    // console.log(this.state.starImgURL)
+  }
+
+  updateImg(){
+    // debugger
+    // e => this.showStars(e.currentTarget.value)
+    return e => {
+      if (e.currentTarget.value === '1'){
+        this.setState({starImgURL: window.oneStarRatingURL})
+      } else if (e.currentTarget.value === '2'){
+        this.setState({starImgURL: window.twoStarRatingURL})
+      } else if (e.currentTarget.value === '3'){
+        this.setState({starImgURL: window.threeStarRatingURL})
+      } else if (e.currentTarget.value === '4'){
+        this.setState({starImgURL: window.fourStarRatingURL})
+      } else if (e.currentTarget.value === '5'){
+        this.setState({starImgURL: window.fiveStarRatingURL})
+      }
+    }
+    // debugger
   }
 
   componentDidMount(){
@@ -69,35 +92,15 @@ class ReviewForm extends React.Component {
 
   showStars(reviewRating){
     if (reviewRating === 1){
-      return (
-        <div className='single-review-star-box'>
-          <img src={window.oneStarRatingURL} alt="one star" />
-        </div>
-      )
+      this.setState({starImgURL: window.oneStarRatingURL})
     } else if (reviewRating === 2){
-      return (
-        <div className='single-review-star-box'>
-          <img src={window.twoStarRatingURL} alt="two star" />
-        </div>
-      )
+      this.setState({starImgURL: window.twoStarRatingURL})
     } else if (reviewRating === 3){
-      return (
-        <div className='single-review-star-box'>
-          <img src={window.threeStarRatingURL} alt="three star" />
-        </div>
-      )
+      this.setState({starImgURL: window.threeStarRatingURL})
     } else if (reviewRating === 4){
-      return (
-        <div className='single-review-star-box'>
-          <img src={window.fourStarRatingURL} alt="four star" />
-        </div>
-      )
+      this.setState({starImgURL: window.fourStarRatingURL})
     } else if (reviewRating === 5){
-      return (
-        <div className='single-review-star-box'>
-          <img className='single-review-star-image' src={window.fiveStarRatingURL} alt="five star" />
-        </div>
-      )
+      this.setState({starImgURL: window.fiveStarRatingURL})
     } 
   }
 
@@ -128,17 +131,17 @@ class ReviewForm extends React.Component {
           <div>
             <div className='review-form-rating'>Rate this product!
               <br />
-                <input type="radio" name='review_rating' id="rating1" value='1' onChange={this.update('review_rating')}/>
-                <input type="radio" name='review_rating' id="rating2" value='2' onChange={this.update('review_rating')}/>
-                <input type="radio" name='review_rating' id="rating3" value='3' onChange={this.update('review_rating')}/>
-                <input type="radio" name='review_rating' id="rating4" value='4' onChange={this.update('review_rating')}/>
-                <input type="radio" name='review_rating' id="rating5" value='5' onChange={this.update('review_rating')}/>
-                {/* {() => this.showStars(this.state.review_rating)} */}
+                <input type="radio" name='review_rating' id="rating1" value='1' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
+                <input type="radio" name='review_rating' id="rating2" value='2' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
+                <input type="radio" name='review_rating' id="rating3" value='3' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
+                <input type="radio" name='review_rating' id="rating4" value='4' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
+                <input type="radio" name='review_rating' id="rating5" value='5' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
                 {/* ask how to make this into the stars and 
                 how to populate the lower ratings
-                while choosing the higher ones */}
+              while choosing the higher ones */}
               <br />
             </div>
+              <img src={this.state.starImgURL} alt="stars" />
           </div>
           <label className='review-form-body'>Leave a review!
             <br />

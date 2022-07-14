@@ -14,6 +14,7 @@ const mapStateToProps = (state, {match}) => {
   // };
   // const currentUser = state.entities.users
   // console.log(currentUser)
+  // const starRatingAverageImage = state.starImgURL
   const currentUserId = state.session.id
   const currentUserName = state.session.name
   // console.log(currentUserId)
