@@ -4,6 +4,7 @@ import { Route, Switch, Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import LogInFormContainer from '../session_form/login_form_container';
 import ReviewsContainer from '../review/reviews_container';
+import NavFooter from '../footer/footer';
 
 class Product extends React.Component {
   constructor(props){
@@ -153,6 +154,9 @@ class Product extends React.Component {
         </div>
         <div id="reviews" className='product-review-section' key={`all-reviews-${product.id}`}>
           <ReviewsContainer />
+        </div>
+        <div className="footer2">
+          <NavFooter />
         </div>
       </div>
     )

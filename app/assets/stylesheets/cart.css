@@ -1,5 +1,9 @@
-.cart-page{
+.cart-full-page{
   background-color: lightgray;
+}
+
+.cart-page{
+  background-color: inherit;
   display: flex;
   flex-direction: row;
   min-height: 115ex;
