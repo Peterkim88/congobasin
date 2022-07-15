@@ -71,7 +71,6 @@ class ReviewForm extends React.Component {
 
   setAuthorId(){
     const authorId = this.props.currentUserId;
-    // console.log(this.props.currentUserId)
     this.setState({author_id: authorId});
   }
 
@@ -105,74 +104,106 @@ class ReviewForm extends React.Component {
   }
 
   newReviewForm(){
-    // console.log(this.state)
-    // return (
-    //   <div>
-    //     {this.state.product_id}
-    //     {this.state.author_id}
-    //     {this.state.review_rating}
-    //     {this.state.review_body}
-    //   </div>
-    // )
     return (
-      <div>
+      <div className='review-form-container'>
         <form onSubmit={this.handleSubmit} className="review-form-box">
-          {/* <h1 className='review-form-heading'>Submit a review for this product!</h1> */}
-          {/* <label className='review-form-product-id'>product id
-            <br />
-              {this.state.product_id}
-            <br />
-          </label>
-          <label className='review-form-author-id'>author id
-            <br />
-              {this.state.author_id}
-            <br />
-          </label> */}
-          <div>
-            <div className='review-form-rating'>Rate this product!
-              <br />
-                <input type="radio" name='review_rating' id="rating1" value='1' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
-                <input type="radio" name='review_rating' id="rating2" value='2' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
-                <input type="radio" name='review_rating' id="rating3" value='3' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
-                <input type="radio" name='review_rating' id="rating4" value='4' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
-                <input type="radio" name='review_rating' id="rating5" value='5' onChange={this.update('review_rating')} onClick={this.updateImg()}/>
-                {/* ask how to make this into the stars and 
-                how to populate the lower ratings
-              while choosing the higher ones */}
-              <br />
-            </div>
-              <img src={this.state.starImgURL} alt="stars" />
+          <div className='review-form-label-box'>
+            <label className='review-form-label'>Create Review</label>
           </div>
-          <label className='review-form-body'>Leave a review!
-            <br />
-              <textarea className='review-form-body-input'
+          <div className='review-form-rating-box'>
+            <div className='review-form-rating-label-box'>
+              <label className='review-form-rating-label'>Overall Rating</label>
+            </div>
+            <div className='review-form-rating-radio-box'>
+              <div className='review-form-rating-radio-button-box'>
+                <input 
+                  className='review-form-rating-radio-button' 
+                  type="radio" 
+                  name='review_rating' 
+                  id="rating1" 
+                  value='1' 
+                  onChange={this.update('review_rating')} 
+                  onClick={this.updateImg()}
+                />
+              </div>
+              <div className='review-form-rating-radio-button-box'>
+                <input 
+                  className='review-form-rating-radio-button' 
+                  type="radio" 
+                  name='review_rating' 
+                  id="rating2" 
+                  value='2' 
+                  onChange={this.update('review_rating')} 
+                  onClick={this.updateImg()}
+                />
+              </div>
+              <div className='review-form-rating-radio-button-box'>
+                <input 
+                  className='review-form-rating-radio-button' 
+                  type="radio" 
+                  name='review_rating' 
+                  id="rating3" 
+                  value='3' 
+                  onChange={this.update('review_rating')} 
+                  onClick={this.updateImg()}
+                />
+              </div>
+              <div className='review-form-rating-radio-button-box'>
+                <input 
+                  className='review-form-rating-radio-button' 
+                  type="radio" 
+                  name='review_rating' 
+                  id="rating4" 
+                  value='4' 
+                  onChange={this.update('review_rating')} 
+                  onClick={this.updateImg()}
+                />
+              </div>
+              <div className='review-form-rating-radio-button-box'>
+                <input 
+                  className='review-form-rating-radio-button' 
+                  type="radio" 
+                  name='review_rating' 
+                  id="rating5" 
+                  value='5' 
+                  onChange={this.update('review_rating')} 
+                  onClick={this.updateImg()}
+                />
+              </div>
+            </div>
+            <div className='review-form-rating-stars-box'>
+              <img className='review-form-rating-stars-image' src={this.state.starImgURL} alt="stars" />
+            </div>
+          </div>
+          <div className='review-form-review-box'>
+            <div className='review-form-review-label-box'>
+              <label className='review-form-review-label'>Add a written review</label>
+            </div>
+            <div className='review-form-review-body-textarea-box'>
+              <textarea className='review-form-review-body-textarea'
                 type="text" 
                 onChange={this.update('review_body')}  
               />
-            <br />
-          </label>
-          <input className='review-form-submit'
-            type="submit"
-            value={this.props.formType}
-          />
+            </div>
+          </div>
+          <div className='review-form-submit-box'>
+            <button className='review-form-submit-button'
+              type='submit'
+              value={this.props.formType}>
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     )
   }
 
   render(){
-    // console.log(this.props)
-    // console.log(this.props.selectedReviews.id)
     if (this.props.currentUserId !== null && this.checkCurrentUserReview() === null){
       return(
-        <div>
-          {this.newReviewForm()}
-        </div>
+        this.newReviewForm()
       )
     }
-    // if (this.props.currentUserId !== null){
-    //   return {this.newReviewForm()}
-    // }
   }
 }
 

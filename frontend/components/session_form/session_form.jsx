@@ -159,9 +159,9 @@ class SessionForm extends React.Component {
           </form>
           {this.breaks()}
           {this.breaks()}
-          <div className="footer2">
+          {/* <div className="footer2">
             <NavFooter />
-          </div>
+          </div> */}
               {/* <button onClick={(e) => this.handleDemo(e)}>Try Demo</button> */}
         </div>
     );
