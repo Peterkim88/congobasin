@@ -75,9 +75,9 @@ class Reviews extends React.Component {
             <div className='review-author-name'>
               {review.author_name}
             </div>
-            {/* <div className='single-review-star-box'> */}
+            <div className='single-review-star-box'>
               {this.showStars(review.review_rating)}
-            {/* </div> */}
+            </div>
             <br />
             {review.review_body}
             <br />
@@ -118,8 +118,8 @@ class Reviews extends React.Component {
         <br />
         <br />
         {/* {this.productInfo()} */}
-        <div className='review-left-margin'>
-        </div>
+        {/* <div className='review-left-margin'>
+        </div> */}
         <br />
         <br />
         <div className='product-reviews-box'>
@@ -131,8 +131,8 @@ class Reviews extends React.Component {
           <br />
           {this.reviews()}
         </div>
-        <div className='review-right-margin'>
-        </div>
+        {/* <div className='review-right-margin'>
+        </div> */}
         <br />
       </div>
     )

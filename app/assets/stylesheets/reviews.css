@@ -2,6 +2,7 @@
   display: flex;
   margin-left: 20px;
   flex-direction: row;
+  width: 100%;
   /* align-items: center; */
   /* vertical-align: super; */
   /* justify-content: center; */
@@ -33,10 +34,12 @@
 }
 
 .review-box{
+  display: flex;
   font: "Amazon Ember",Arial,sans-serif;
-  width: fit-content;
-  min-width: 70ex;
-  max-width: 70ex;
+  width: 70%;
+  flex-direction: column;
+  /* min-width: 70ex;
+  max-width: 70ex; */
   border-style: solid;
   border-width: 2px;
   border-radius: 5px;
@@ -55,7 +58,7 @@
 } */
 
 .product-reviews-box{
-  margin: -32px;
+  /* margin: -32px; */
   display: flex;
   flex-direction: column;
   border-top-style: solid;
@@ -64,6 +67,7 @@
   border-top-right-radius: 5px;
   border-color: lightgray;
   padding: 5px;
+  width: inherit;
   /* width: 800px; */
   /* max-height: auto;
   min-height: auto;
@@ -72,35 +76,12 @@
   /* width: 25%; */
   /* align-items: left; */
   /* justify-content: top; */
-  flex: 8
-}
-
-.review-left-margin{
-  margin: auto;
-  display: flex;
-  /* max-height: 50ex;
-  min-height: 50ex;
-  max-width: 50ex;
-  min-width: 50ex; */
-  /* width: 25%; */
-  height: 50ex;
-  width: 50ex;
-  /* align-items: center;
-  justify-content: center; */
-  flex: 3
-}
-
-.review-right-margin{
-  display: flex;
-  /* flex-direction: column; */
-  flex: 4;
-  /* margin-left: auto; */
-  /* align-items: center;
-  justify-content: top; */
+  /* flex: 8 */
 }
 
 .product-reviews-heading{
   font-size: 20px;
+  width: inherit;
 }
 
 .single-review-star-box{
