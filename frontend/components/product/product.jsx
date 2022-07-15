@@ -1,7 +1,7 @@
 import React from 'react';
 import Reviews from '../review/reviews_container';
 import { Route, Switch, Link, NavLink } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { NavHashLink, HashLink } from 'react-router-hash-link';
 import LogInFormContainer from '../session_form/login_form_container';
 import ReviewsContainer from '../review/reviews_container';
 import NavFooter from '../footer/footer';
@@ -144,11 +144,19 @@ class Product extends React.Component {
       reviewCount += 1;
       newTotal += review.review_rating;
     })
-    const average = newTotal / reviewCount;
+    const average = Math.round(newTotal / reviewCount);
     const stars = this.showStars(average);
     return(
       stars
     )
+  }
+
+  reviewCount(){
+    let reviewCount = 0;
+    this.props.selectedReviews.map((review) => {
+      reviewCount += 1;
+    })
+    return(reviewCount)
   }
 
   render(){
@@ -160,7 +168,7 @@ class Product extends React.Component {
       return null;
     }
     return(
-      <div>
+      <div className='product-whole-page'>
         <br />
         <br />
         <br />
@@ -179,12 +187,14 @@ class Product extends React.Component {
                 star rating
                 <br />
               </div> */}
-              <HashLink to={`/products/${product.id}#reviews`}>
-                {this.showAverageReviewRatings()}
-                <button>
-                  Reviews
-                </button>
-              </HashLink>
+              <NavHashLink className='product-reviews-anchor-link' to={`/products/${product.id}#reviews`}>
+                <div className='product-reviews-anchor-link-image-box'>
+                  {this.showAverageReviewRatings()}
+                </div>
+                <div className='product-reviews-anchor-link-rating-count'>
+                  <label>{this.reviewCount()} ratings</label>
+                </div>
+              </NavHashLink>
             </div>
             <br />
             <br />
@@ -227,12 +237,14 @@ class Product extends React.Component {
             </div>
           </div>
         </div>
-        <div className='product-reviews-page-box'>
-          <div></div>
-          <div id="reviews" className='product-review-section' key={`all-reviews-${product.id}`}>
-            <ReviewsContainer />
-          </div>
-          <div></div>
+        <div id='reviews' className='product-reviews-container'>
+          {/* <div className='product-reviews-page-box'> */}
+            <div className='product-reviews-section-left-margin'></div>
+            <div className='product-reviews-section' key={`all-reviews-${product.id}`}>
+              <ReviewsContainer />
+            </div>
+            <div className='product-reviews-section-right-margin'></div>
+          {/* </div> */}
         </div>
         {/* <div className="footer2">
           <NavFooter />

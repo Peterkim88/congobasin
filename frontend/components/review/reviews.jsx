@@ -114,7 +114,7 @@ class Reviews extends React.Component {
   render(){
     // const averageStarRating = this.averageReviewStars();
     return (
-      <div id='review-anchor' className='reviews-page'>
+      <div className='reviews-page'>
         <br />
         <br />
         {/* {this.productInfo()} */}
