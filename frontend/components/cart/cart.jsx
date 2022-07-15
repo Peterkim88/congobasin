@@ -200,9 +200,9 @@ class Cart extends React.Component {
           <div className='cart-heading-right-margin'></div>
           <div className='cart-right-margin'></div>
         </div>
-        <div className="footer2">
+        {/* <div className="footer2">
           <NavFooter />
-        </div>
+        </div> */}
       </div>     
     )
   }

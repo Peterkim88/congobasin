@@ -1,0 +1,132 @@
+.review-form-container{
+  display: flex;
+}
+
+.review-form-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form-box .review-form-label-box{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  height: 35px;
+}
+
+.review-form-label-box .review-form-label{
+  display: flex;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.review-form-box .review-form-rating-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form-rating-label-box{
+  display: flex;
+  height: 25px;
+  width: 800px;
+  align-items: flex-end;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: lightgray;
+}
+
+.review-form-rating-label{
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.review-form-box .review-form-rating-radio-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  width: 220px;
+}
+
+.review-form-rating-radio-box .review-form-rating-radio-button-box{
+  display: flex;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-form-rating-radio-box .review-form-rating-radio-button{
+  display: flex;
+  transform: scale(3);
+  /* position: relative; */
+  /* visibility: hidden; */
+  opacity: 0;
+}
+
+.review-form-rating-stars-box{
+  display: flex;
+  height: 50px;
+  margin-top: -40px;
+}
+
+.review-form-rating-stars-image{
+  display: flex;
+  height: 40px;
+  width: auto;
+}
+
+.review-form-review-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form-review-box .review-form-review-label-box{
+  display: flex;
+  height: 30px;
+  width: 800px;
+  align-items: center;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: lightgray;
+}
+
+.review-form-review-label {
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.review-form-review-body-textarea-box{
+  display: flex;
+  width: 800px;
+  height: 130px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: lightgray;
+}
+
+.review-form-review-body-textarea-box .review-form-review-body-textarea{
+  display: flex;
+  width: inherit;
+  height: 115px;
+}
+
+.review-form-submit-box{
+  display: flex;
+  height: 40px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.review-form-submit-button{
+  display: flex;
+  height: 30px;
+  width: 70px;
+  background-color: #efcf30;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}

@@ -234,9 +234,9 @@ class Product extends React.Component {
           </div>
           <div></div>
         </div>
-        <div className="footer2">
+        {/* <div className="footer2">
           <NavFooter />
-        </div>
+        </div> */}
       </div>
     )
   }

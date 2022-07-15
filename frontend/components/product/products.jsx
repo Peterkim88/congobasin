@@ -68,9 +68,9 @@ class Products extends React.Component {
           <div className='products-body'>
             {products}
           </div>
-          <div className="footer2">
+          {/* <div className="footer2">
             <NavFooter />
-          </div>
+          </div> */}
         </div>
       </div>
     )
