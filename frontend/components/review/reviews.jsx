@@ -26,9 +26,11 @@ class Reviews extends React.Component {
   deleteReviewButton(productId, review){
     if (this.props.currentUserId === review.author_id){
       return(
-        <button type="submit" onClick={() => {this.props.deleteReview(productId, review.id)}}>
-          Delete Review
-        </button>
+        <div className='delete-review-button-box'>
+          <button className='delete-review-button' type="submit" onClick={() => {this.props.deleteReview(productId, review.id)}}>
+            Delete
+          </button>
+        </div>
       )
     }
   }

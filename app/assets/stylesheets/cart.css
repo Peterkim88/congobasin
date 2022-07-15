@@ -100,8 +100,8 @@
 
 .quantity-to-add-dropdown{
   display: flex;
-  background-color: rgb(230, 230, 230);
   border-radius: 7px;
+  background-color: rgb(230, 230, 230);
   border-color: lightgray;
 }
 
