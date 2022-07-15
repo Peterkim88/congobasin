@@ -1,7 +1,7 @@
 import React from 'react';
 import Reviews from '../review/reviews_container';
 import { Route, Switch, Link, NavLink } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { NavHashLink, HashLink } from 'react-router-hash-link';
 import LogInFormContainer from '../session_form/login_form_container';
 import ReviewsContainer from '../review/reviews_container';
 import NavFooter from '../footer/footer';
@@ -40,19 +40,45 @@ class Product extends React.Component {
   quantityToAdd(){
     const handleQuantity = event => {
       const newQuantity = event.target.value
-      // console.log(newQuantity)
       return this.setState({
         quantityToAdd: newQuantity
       })
     }
     return(
       <div className='quantity-to-add'>
-        Qty:
-        <input 
-          type="number"
-          onChange={handleQuantity} 
-          defaultValue={this.state.quantityToAdd} 
-          className='quantity-to-add-input' />
+        <label className='quantity-to-add-label'>Qty:</label>
+        <select className='quantity-to-add-dropdown' onChange={handleQuantity}>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+          <option value={10}>10</option>
+          <option value={11}>11</option>
+          <option value={12}>12</option>
+          <option value={13}>13</option>
+          <option value={14}>14</option>
+          <option value={15}>15</option>
+          <option value={16}>16</option>
+          <option value={17}>17</option>
+          <option value={18}>18</option>
+          <option value={19}>19</option>
+          <option value={20}>20</option>
+          <option value={21}>21</option>
+          <option value={22}>22</option>
+          <option value={23}>23</option>
+          <option value={24}>24</option>
+          <option value={25}>25</option>
+          <option value={26}>26</option>
+          <option value={27}>27</option>
+          <option value={28}>28</option>
+          <option value={29}>29</option>
+          <option value={30}>30</option>
+        </select>
       </div>
     )
   }
@@ -144,11 +170,19 @@ class Product extends React.Component {
       reviewCount += 1;
       newTotal += review.review_rating;
     })
-    const average = newTotal / reviewCount;
+    const average = Math.round(newTotal / reviewCount);
     const stars = this.showStars(average);
     return(
       stars
     )
+  }
+
+  reviewCount(){
+    let reviewCount = 0;
+    this.props.selectedReviews.map((review) => {
+      reviewCount += 1;
+    })
+    return(reviewCount)
   }
 
   render(){
@@ -160,7 +194,7 @@ class Product extends React.Component {
       return null;
     }
     return(
-      <div>
+      <div className='product-whole-page'>
         <br />
         <br />
         <br />
@@ -175,16 +209,14 @@ class Product extends React.Component {
             </div>
             <br />
             <div className='product-reviews-info' key={`reviews-${product.id}`}>
-              {/* <div className='product-reviews-stars'>
-                star rating
-                <br />
-              </div> */}
-              <HashLink to={`/products/${product.id}#reviews`}>
-                {this.showAverageReviewRatings()}
-                <button>
-                  Reviews
-                </button>
-              </HashLink>
+              <NavHashLink className='product-reviews-anchor-link' to={`/products/${product.id}#reviews`}>
+                <div className='product-reviews-anchor-link-image-box'>
+                  {this.showAverageReviewRatings()}
+                </div>
+                <div className='product-reviews-anchor-link-rating-count'>
+                  <label>{this.reviewCount()} ratings</label>
+                </div>
+              </NavHashLink>
             </div>
             <br />
             <br />
@@ -213,26 +245,50 @@ class Product extends React.Component {
                 ${product.product_price}
               </div>
               <div>
-                {'& FREE Returns'}
+                <label className='free-return-message'>
+                  {'& FREE Returns'}
+                </label>
               </div>
               <br />
+                <label className='free-delivery-message'>
+                  {'FREE Delivery'}
+                </label>
               <br />
-              <div>
+              <br />
+              <br />
+              <br />
+                <label className='instock-message'>
+                  In Stock
+                </label>
+              <br />
+              <div className='quantity-to-add-box'>
                 {this.quantityToAdd()}
               </div>
               {/* <br /> */}
-              <div>
+              <div className='add-to-cart-box'>
                 {this.addItemToCart()}
               </div>
+              <label className='secure-transaction-message'>
+                {'Secure transaction'}
+              </label>
+              <br />
+              <br />
+              <label className='ships-from-message'>
+                {'Ships from   Amazon'}
+              </label>
             </div>
           </div>
         </div>
-        <div className='product-reviews-page-box'>
-          <div></div>
-          <div id="reviews" className='product-review-section' key={`all-reviews-${product.id}`}>
-            <ReviewsContainer />
-          </div>
-          <div></div>
+        <div id='reviews' className='product-reviews-container'>
+          {/* <div className='product-reviews-page-box'> */}
+            {/* <div className='product-reviews-section-left-margin'></div> */}
+            <div className='review-left-margin'></div>
+            <div className='product-reviews-section' key={`all-reviews-${product.id}`}>
+              <ReviewsContainer />
+            </div>
+            <div className='review-right-margin'></div>
+            {/* <div className='product-reviews-section-right-margin'></div> */}
+          {/* </div> */}
         </div>
         {/* <div className="footer2">
           <NavFooter />

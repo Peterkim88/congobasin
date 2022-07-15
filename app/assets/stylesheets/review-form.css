@@ -11,7 +11,7 @@
   display: flex;
   width: fit-content;
   align-items: center;
-  height: 35px;
+  height: 40px;
 }
 
 .review-form-label-box .review-form-label{
@@ -27,9 +27,9 @@
 
 .review-form-rating-label-box{
   display: flex;
-  height: 25px;
+  height: 30px;
   width: 800px;
-  align-items: flex-end;
+  align-items: center;
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: lightgray;
@@ -37,7 +37,7 @@
 
 .review-form-rating-label{
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -94,7 +94,7 @@
 
 .review-form-review-label {
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
