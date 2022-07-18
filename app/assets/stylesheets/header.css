@@ -42,10 +42,6 @@ table {
 	border-spacing: 0;
 }
 
-button {
-	background-color: rgb(225, 180, 122);
-}
-
 div{
 	font-family: "Amazon Ember",Arial,sans-serif;
 }
@@ -71,17 +67,18 @@ div{
 }
 
 .logo-link {
-	max-height: 5ex;
+	display: flex;
+	/* max-height: 5ex;
 	max-width: 20ex;
 	min-width: 20ex;
-	min-height: 5ex;
+	min-height: 5ex; */
 	align-items: center;
 	justify-content: space-around;
-	flex: 4;
+	flex: 2.5;
 }
 
 .header-logo {
-	display: block;
+	display: flex;
 	max-height: 20ex;
 	max-width: 16ex;
 	margin-left: auto;
@@ -109,8 +106,8 @@ div{
 
 .search-button {
 	display: flex;
-	height: 4ex;
-	width: 4ex;
+	height: 26px;
+	width: 26px;
 	align-items: center;
 }
 
@@ -126,30 +123,39 @@ div{
 }
 
 .login-box {
+	display: flex;
 	color: white;
-	max-height: 5ex;
-	max-width: auto;
-	min-width: 90%;
-	flex: 4;
+	flex: 6;
+	flex-direction: column;
 }
 
 .cart-box {
+	display: flex;
 	/* max-height: auto;
 	max-width: auto;
 	flex: 2; */
-	max-height: 5ex;
-	max-width: 10ex;
-	min-width: 10ex;
-	min-height: 5ex;
 	align-items: center;
-	justify-content: space-around;
-	flex: 3;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	flex: 1.5;
+}
+
+.cart-link{
+	display: flex;
+	width: 90%;
+	height: 90%;
+	align-items: center;
+	justify-content: center;
 }
 
 .login-signup {
+	display: flex;
+	height: 80%;
 	color: white;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+	flex-direction: column;
 }
 
 .auth-group {
@@ -157,20 +163,12 @@ div{
 	justify-content: center;
 }
 
-.header-cart {
-	/* margin-left: 20px;
-	max-width: 50%;
-	max-height: auto; */
-	display: block;
-	max-height: 5ex;
-	min-height: 5ex;
-	max-width: 5ex;
-	min-width: 5ex;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: auto;
-	margin-bottom: auto;
-	width: 50%;
+.header-cart-image {
+	display: flex;
+	width: 60px;
+	position: fixed;
+	align-items: center;
+	justify-content: center;
 }
 
 .cart-button {
@@ -195,6 +193,21 @@ div{
 	/* margin-right: 60px; */
 	/* padding-right: 60px; */
 	/* padding-left: 5px; */
+}
+
+.header-session-button{
+	background-color: #f0c14b;
+	width: 70px;
+  background-image: linear-gradient(to top, #ffb443 60%, #fdc769 100%);
+  border-style: solid;
+  border-width: 1px;
+  border-color:#e68332;
+	text-decoration: none;
+}
+
+.header-session-button:hover{
+	background-color: #ecb428;
+	background-image: linear-gradient(to top, #f8a529 60%, #fabc50 100%);
 }
 
 .header-login-button{
@@ -236,4 +249,12 @@ div{
 .sub-header-profile-links{
 	align-content: flex-end;
 	justify-content: center;
+}
+
+.cart-count-box{
+	display: flex;
+	background-color: transparent;
+	color: #f0c14b;
+	margin-left: 11px;
+	margin-bottom: 20px;
 }

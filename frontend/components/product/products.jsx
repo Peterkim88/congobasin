@@ -11,6 +11,7 @@ class Products extends React.Component {
 
   componentDidMount(){
     this.props.showAllProducts()
+    this.props.showAllItems(this.props.userId)
       // .then(response => response.json())
       // .then(allProducts => this.setState(allProducts))
   }

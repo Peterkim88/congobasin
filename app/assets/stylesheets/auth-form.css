@@ -19,9 +19,34 @@
   font-size: inherit;
 }
 
+.logout-button {
+	background-color: #f0c14b;
+  background-image: linear-gradient(to top, #ffb443 60%, #fdc769 100%);
+  border-style: solid;
+  border-width: 1px;
+  border-color:#e68332;
+	text-decoration: none;
+}
+
+.logout-button:hover{
+  background-color: #ecb428;
+  background-image: linear-gradient(to top, #f8a529 60%, #fabc50 100%);
+}
+
 .session-submit {
-	background-color: rgb(225, 180, 122);
+	background-color: #f0c14b;
+	width: 120px;
+  background-image: linear-gradient(to top, #ffb443 60%, #fdc769 100%);
+  border-style: solid;
+  border-width: 1px;
+  border-color:#e68332;
+	text-decoration: none;
   font-size: 20px;
+}
+
+.session-submit:hover{
+  background-color: #ecb428;
+  background-image: linear-gradient(to top, #f8a529 60%, #fabc50 100%);
 }
 
 .login-form-heading {
@@ -35,4 +60,26 @@
 
 .session-errors{
   color: red;
+}
+
+.handle-demo-box{
+  height: 200px;
+}
+
+.handle-demo-button-box{
+  height: 200px;
+}
+
+.handle-demo-button{
+  background-color: #f0c14b;
+  background-image: linear-gradient(to top, #ffb443 60%, #fdc769 100%);
+  border-style: solid;
+  border-width: 1px;
+  border-color:#e68332;
+  font-size: 20px;
+}
+
+.handle-demo-button:hover{
+  background-color: #ecb428;
+  background-image: linear-gradient(to top, #f8a529 60%, #fabc50 100%);
 }

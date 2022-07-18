@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
     this.userLoginForm = this.userLoginForm.bind(this);
     this.userSignupForm = this.userSignupForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleDemo = this.handleDemo(this);
+    this.handleDemo = this.handleDemo(this);
     // this.update = this.update.bind(this);
     // this.renderErrors = this.renderErrors.bind(this);
   }
@@ -29,14 +29,21 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // handleDemo(e){
-  //   e.preventDefault();
-  //   const user = {
-  //     email: 'demo@demo.com',
-  //     password: 'demodemo'
-  //   }
-  //   this.props.processForm(user);
-  // }
+  handleDemo(){
+    // e.preventDefault();
+    const user = {
+      email: 'demo@demo.com',
+      password: 'demodemo'
+    }
+    // this.props.processForm(user);
+    return(
+      <div className='handle-demo-button-box'>
+        <button className='handle-demo-button' onClick={() => this.props.processForm(user)}>
+          Try the Demo!
+        </button>
+      </div>
+    )
+  }
 
   renderErrors(){
     return (
@@ -113,9 +120,9 @@ class SessionForm extends React.Component {
           </form>
           {this.breaks()}
           {this.breaks()}
-          <div className="footer2">
+          {/* <div className="footer2">
             <NavFooter />
-          </div>
+          </div> */}
         </div>
     );
     return userSignupForm;
@@ -157,6 +164,10 @@ class SessionForm extends React.Component {
               <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
           </form>
+          <br />
+          <div className='handle-demo-box'>
+            {this.handleDemo}
+          </div>
           {this.breaks()}
           {this.breaks()}
           {/* <div className="footer2">
