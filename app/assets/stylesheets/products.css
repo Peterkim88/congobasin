@@ -26,12 +26,13 @@
   flex-direction: column;
   width: 400px;
   height: 600px;
+  padding: 10px;
 	/* max-height: 70ex;
 	min-height: 70ex;
 	max-width: 60ex;
 	min-width: 60ex; */
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .products-listings-names{
@@ -59,7 +60,7 @@
 	max-width: 50ex;
 	min-width: auto; */
   /* width: 85%; */
-  height: 60%;
+  max-height: 70%;
   width: 80%;
   align-items: center;
   justify-content: center;
