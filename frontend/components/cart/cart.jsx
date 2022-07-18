@@ -172,7 +172,7 @@ class Cart extends React.Component {
         <div className='cart-checkout-subtotal'>
           Subtotal ({totalQuantity} items) 
           <br />
-          ${subTotal}
+          ${subTotal.toFixed(2)}
         </div>
         <br />
         <div>
