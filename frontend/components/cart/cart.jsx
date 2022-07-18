@@ -29,43 +29,6 @@ class Cart extends React.Component {
     )
   }
 
-  // updateQuantity(userId, item){
-  //   // let currentQuantity = item.quantity
-  //   // let currentQuantity = ${`update-cart-${item.id}`}.current.value
-  //   console.log(currentQuantity)
-  //   return(
-  //     // <form type='submit'
-  //     //   onChange={
-  //     //     () => this.props.updateItem(userId, item)
-  //     //   }>   
-  //     <form type='submit'>
-  //       {/* <div {currentQuantity = parseInt(document.getElementById(`update-cart-${item.id}`))}> */}
-  //       <div>
-  //         <input 
-  //           ref={`update-cart-${item.id}`}
-  //           type="number" 
-  //           value={item.quantity} />
-  //         <button onClick={() => this.props.updateItem(userId, item)}>
-  //           Update Quantity
-  //         </button>
-  //       </div>
-  //       {/* {console.log(document.getElementById(`update-cart-${item.id}`))} */}
-  //       {console.log(currentQuantity)}
-  //     </form>
-  //     // </form>
-  //   )
-  // }
-
-  // updatedItem(item, newQuantity){
-  //   const newItem = {
-  //     id: item.id,
-  //     user_id: item.user_id,
-  //     product_id: item.product_id,
-  //     quantity: newQuantity
-  //   }
-  //   return newItem;
-  // }
-
   updateQuantity(userId, item){
     let newItem = item
     const handleQuantity = event => {
@@ -73,18 +36,57 @@ class Cart extends React.Component {
       return newItem.quantity = newQuantity;
     }
     return(
-      <div>Qty:
-        <input 
-          className='update-quantity-input'
-          ref={`update-cart-${item.id}`}
-          type="number"
-          onChange={handleQuantity} 
-          defaultValue={item.quantity} />
-        {' '}
-        <button className='cart-update-quantity-button' 
-          onClick={() => this.props.updateItem(userId, newItem)}>
-          Update Quantity
-        </button>
+      // <div>Qty:
+      //   <input 
+      //     className='update-quantity-input'
+      //     ref={`update-cart-${item.id}`}
+      //     type="number"
+      //     onChange={handleQuantity} 
+      //     defaultValue={item.quantity} />
+      //   {' '}
+      //   <button className='cart-update-quantity-button' 
+      //     onClick={() => this.props.updateItem(userId, newItem)}>
+      //     Update Quantity
+      //   </button>
+      // </div>
+      <div className='quantity-to-add' onChange={() => this.props.updateItem(userId, newItem)}>
+        <label className='quantity-to-add-label'>Qty:</label>
+        <select className='quantity-to-add-dropdown' onChange={handleQuantity}>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+          <option value={10}>10</option>
+          <option value={11}>11</option>
+          <option value={12}>12</option>
+          <option value={13}>13</option>
+          <option value={14}>14</option>
+          <option value={15}>15</option>
+          <option value={16}>16</option>
+          <option value={17}>17</option>
+          <option value={18}>18</option>
+          <option value={19}>19</option>
+          <option value={20}>20</option>
+          <option value={21}>21</option>
+          <option value={22}>22</option>
+          <option value={23}>23</option>
+          <option value={24}>24</option>
+          <option value={25}>25</option>
+          <option value={26}>26</option>
+          <option value={27}>27</option>
+          <option value={28}>28</option>
+          <option value={29}>29</option>
+          <option value={30}>30</option>
+        </select>
+      {/* <button className='cart-update-quantity-button' 
+        onClick={() => this.props.updateItem(userId, newItem)}>
+        Update Qty
+      </button> */}
       </div>
     )
   }
@@ -103,6 +105,9 @@ class Cart extends React.Component {
                 <div className='cart-product-details'>
                   <div className='cart-product-name'>
                     {product.product_name}
+                  </div>
+                  <div className='cart-product-details-instock-message'>
+                    In Stock
                   </div>
                   {/* <br /> */}
                   <div className='cart-product-price'>
@@ -129,15 +134,17 @@ class Cart extends React.Component {
     })
     if (items.length === 0){
       return(
-        <div className='cart-empty-message'>
-          <div className='cart-thank-you'>
-            Thank you for shopping at Congo Basin!
-          </div>
-          <br />
-          <div>
-            <Link to='/' className='cart-link-to-homepage'>
-              Click here to checkout products on our homepage!
-            </Link>
+        <div className='cart-product-info'>
+          <div className='cart-empty-message'>
+            <div className='cart-thank-you'>
+              Thank you for shopping at Congo Basin!
+            </div>
+            <br />
+            <div>
+              <Link to='/' className='cart-link-to-homepage'>
+                Click here to checkout products on our homepage!
+              </Link>
+            </div>
           </div>
         </div>
       )  
@@ -185,24 +192,27 @@ class Cart extends React.Component {
   render(){
     return(
       <div className='cart-full-page'>
-        <div className='cart-heading'>
-          <div className='cart-heading-left-margin'></div>
-          <div className='cart-heading-message'>Your Items</div>
+        <div className='cart-top-margin'></div>
+        <div className='cart-body'>
+          <div className='cart-left-margin'></div>
+          
+          <div className='cart-page'>
+            <div className='cart-heading'>
+              <div className='cart-heading-message'>Shopping Cart</div>
+            </div>
+            <div className='cart-all-items'>
+              {this.cartItems()}
+            </div>
+          </div>
+          
           <div className='cart-checkout-container'>
             {this.checkOut()}
           </div>
-        </div>
-        <div className='cart-page'>
-          <div className='cart-left-margin'></div>
-          <div className='cart-all-items'>
-            {this.cartItems()}
-          </div>
-          <div className='cart-heading-right-margin'></div>
+          
           <div className='cart-right-margin'></div>
         </div>
-        {/* <div className="footer2">
-          <NavFooter />
-        </div> */}
+        <div className='cart-bot-margin'></div>
+      
       </div>     
     )
   }
