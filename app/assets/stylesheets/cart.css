@@ -110,13 +110,14 @@
   display: flex;
   height: 160px;
   width: 160px;
+  justify-content: center;
   flex: 2
 }
 
 .cart-product-image {
   display: flex;
-  height: auto;
-  width: auto;
+  max-height: inherit;
+  max-width: inherit;
 }
 
 .cart-product-details{
