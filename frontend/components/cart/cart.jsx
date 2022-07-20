@@ -24,7 +24,7 @@ class Cart extends React.Component {
       <button className='cart-delete-button' 
         type="submit" 
         onClick={() => {this.props.deleteItem(userId, item)}}>
-        Remove
+        Delete
       </button>
     )
   }
@@ -51,7 +51,7 @@ class Cart extends React.Component {
       // </div>
       <div className='quantity-to-add' onChange={() => this.props.updateItem(userId, newItem)}>
         <label className='quantity-to-add-label'>Qty:</label>
-        <select className='quantity-to-add-dropdown' onChange={handleQuantity}>
+        <select className='quantity-to-add-dropdown' onChange={handleQuantity} value={item.quantity}>
           <option value={1}>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>
